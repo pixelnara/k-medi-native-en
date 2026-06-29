@@ -1,0 +1,335 @@
+/* ============================================================
+   KMEDITOUR — Design System Tokens
+   ────────────────────────────────────────────────────────────
+   Layer 1  Primitive      Raw values (color, size, spacing …)
+   Layer 2  Type Scale     Responsive size utilities (--res-*)
+   Layer 3  Semantic       Role tokens (--*, --color-*)
+   Layer 4  Language       Font-family override by [lang]
+   ============================================================ */
+
+:root {
+  /* ════════════════════════════════════════════════════════════
+     LAYER 1 — Primitive Tokens
+     ════════════════════════════════════════════════════════════ */
+
+  /* ─── 1-A. Color: Neutral ─── */
+  --white: #ffffff;
+  --black: #000000;
+  --gray-50: #f9f9f9;
+  --gray-100: #f5f5f5;
+  --gray-150: #f0f0f0;
+  --gray-175: #ededed;
+  --gray-200: #d9d9d9;
+  --gray-300: #c6c6c6;
+  --gray-400: #9b9b9b;
+  --gray-500: #6e6e6e;
+  --gray-600: #3f3f3f;
+  --gray-700: #2c2c2c;
+  --gray-800: #2a2929;
+  --gray-900: #1a1a1a;
+  --gray-950: #111111;
+  --brown-50: #f7f4f2;
+
+  /* ─── 1-B. Color: Blue ─── */
+  --blue-pure: #0000ff;
+  --blue-100: #eaedf5;
+  --blue-200: #b3c5f2;
+  --blue-300: #869fdf;
+  --blue-400: #4a71d9;
+  --blue-500: #1e49ba;
+  --blue-600: #183b96;
+  --blue-700: #102c78;
+  --blue-800: #0a1f58;
+  --blue-ec: #087eec;
+
+  /* ─── 1-C. Color: Light Blue ─── */
+  --light-blue-500: #25aae1;
+
+  /* ─── 1-D. Color: Category Accent ─── */
+  --terracotta-500: #b85c38;
+  --green-500: #2e7d4f;
+
+  /* ─── 1-E. Color: Social ─── */
+  --kakao-yellow: #fee500;
+  --kakao-dark: #191919;
+
+  /* ─── 1-F. Font Size ─── */
+  --text-10: 1rem;
+  --text-11: 1.1rem;
+  --text-12: 1.25rem;
+  --text-13: 1.3rem;
+  --text-14: 1.4rem;
+  --text-15: 1.5rem;
+  --text-16: 1.6rem;
+  --text-17: 1.7rem;
+  --text-18: 1.8rem;
+  --text-19: 1.9rem;
+  --text-20: 2rem;
+  --text-21: 2.1rem;
+  --text-22: 2.2rem;
+  --text-23: 2.3rem;
+  --text-24: 2.4rem;
+  --text-25: 2.5rem;
+  --text-28: 2.8rem;
+  --text-29: 2.9rem;
+  --text-30: 3rem;
+  --text-32: 3.2rem;
+  --text-34: clamp(24px, 2.4vw, 34px);
+  --text-80: clamp(56px, 5vw, 80px);
+  --text-104: clamp(44px, 6.6vw, 104px);
+
+  /* ─── 1-G. Letter Spacing ─── */
+  --tracking-tightest: -0.03em;
+  --tracking-tighter: -0.02em;
+  --tracking-tight: -0.01em;
+  --tracking-snug: 0.01em;
+  --tracking-normal: 0em;
+  --tracking-loose: 0.02em;
+  --tracking-medium: 0.04em;
+  --tracking-open: 0.06em;
+  --tracking-wide: 0.1em;
+  --tracking-wider: 0.22em;
+
+  /* ─── 1-H. Spacing ─── */
+  --space-0: 0px;
+  --space-2: 2px;
+  --space-3: 3px;
+  --space-4: 4px;
+  --space-5: 5px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-32: 32px;
+  --space-36: 36px;
+  --space-40: 40px;
+  --space-44: 44px;
+  --space-48: 48px;
+  --space-52: 52px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-gutter: clamp(16px, 1.6vw, 34px);
+
+  /* ─── 1-I. Radius ─── */
+  --radius-1px: 1px;
+  --radius-full: 50%;
+  --radius-pill: 100px;
+
+  /* ─── 1-J. Shadow ─── */
+  --shadow-card: 0 30px 70px -30px rgba(40, 30, 25, 0.35);
+  --shadow-btn: 0 4px 16px rgba(0, 0, 0, 0.12);
+
+  /* ════════════════════════════════════════════════════════════
+     LAYER 2 — Semantic Color Tokens
+     (컴포넌트는 Primitive를 직접 참조하지 않고 이 토큰만 참조)
+     ════════════════════════════════════════════════════════════ */
+
+  /* ─── 2-A. Background ─── */
+  --bg-white: var(--white);
+  --bg-gray: var(--gray-150);
+  --bg-dark: var(--gray-950);
+  --bg-warm: #f6f6f4;
+
+  /* ─── 2-B. Surface ─── */
+  --surface-gray-1: var(--gray-50);
+  --surface-gray-2: var(--gray-200);
+  --surface-gray-3: var(--brown-50);
+  --surface-gray-4: var(--gray-175);
+  --surface-gray-5: var(--blue-300);
+  --surface-blue-500: var(--blue-500);
+
+  /* ─── 2-C. Text (general UI) ─── */
+  --text-gray-1: var(--gray-300); /* placeholder · inactive */
+  --text-gray-2: var(--gray-400); /* sub-text · date */
+  --text-gray-3: var(--gray-500); /* body default */
+  --text-gray-4: var(--gray-600); /* body secondary */
+  --text-gray-5: var(--gray-700); /* form label */
+  --text-gray-6: var(--gray-900); /* heading · emphasis */
+  --text-gray-7: var(--gray-950); /* max emphasis */
+  --text-blue: var(--blue-500);
+  --text-white: var(--white);
+  --rating: var(--blue-500);
+
+  /* ─── 2-E. Border ─── */
+  --border-gray-1: var(--gray-950); /* 다크 헤어라인 (에디토리얼) */
+  --border-gray-2: var(--gray-300); /* 연한 구분선 (mobile gnb) */
+  --border-gray-4: var(--gray-800); /* 강조 보더 (cnav-btn, filter chip) */
+
+  /* ─── 2-F. Teal (alias → gray, 색상 최소화) ─── */
+  --teal-50: var(--gray-50);
+  --teal-500: var(--gray-700);
+
+  /* ─── 2-G. Button ─── */
+  --btn-primary: var(--gray-950);
+  --btn-secondary: var(--blue-500);
+
+  /* ─── 2-H. Accent ─── */
+  --accent-gray-1: var(--gray-900);
+  --accent-gray-2: var(--gray-950);
+  --accent-blue: var(--blue-500);
+  --accent-gradient: linear-gradient(135deg, var(--gray-950) 0%, var(--gray-950) 35%, var(--gray-900) 70%, var(--gray-900) 100%);
+
+  /* ─── 2-I. Category ─── */
+  --cat-offer: var(--accent-blue);
+  --cat-dining: var(--terracotta-500);
+  --cat-event: var(--green-500);
+
+  /* ─── 2-J. Social ─── */
+  --btn-kakao: var(--kakao-yellow);
+  --btn-kakao-text: var(--kakao-dark);
+
+  /* ─── 2-K. Overlay ─── */
+  --overlay-bg: rgba(0, 0, 0, 0.55);
+  --overlay-50: rgba(0, 0, 0, 0.5);
+  --overlay-60: rgba(0, 0, 0, 0.6);
+
+  /* ─── 2-L. Cosmetic Page ─── */
+  --cosm-navy: #1a1a1e;
+  --cosm-badge-gift: var(--gray-900);
+  --cosm-badge-buyers-bg: rgba(0, 0, 0, 0.58);
+  --cosm-card-hover: rgba(0, 0, 0, 0.06);
+  --cosm-card-hover-shadow: 0 0 0 14px rgba(0, 0, 0, 0.06);
+  --cosm-action-bar-bg: rgba(0, 0, 0, 0.82);
+  --cosm-btn-on-dark-hover: rgba(255, 255, 255, 0.12);
+  --cosm-membership-bg: var(--gray-150);
+  --cosm-membership-text: var(--gray-700);
+  --cosm-discount: var(--gray-950);
+  --cosm-like-active: var(--gray-900);
+
+  /* ════════════════════════════════════════════════════════════
+     LAYER 3 — Responsive Type Scale
+     ────────────────────────────────────────────────────────────
+     크기(size)만 담당. font / weight / color는 포함하지 않는다.
+     컴포넌트에서 직접 참조 가능. Layer 4(--*)도 이 토큰 참조.
+     ════════════════════════════════════════════════════════════ */
+
+  --res-h3: clamp(20px, 2.2vw, 30px);
+  --res-h4: clamp(18px, 1.8vw, 24px);
+  --res-h5: clamp(16px, 1.5vw, 22px);
+
+  --res-body-lg: clamp(16px, calc(15px + 0.4vw), 18px);
+  --res-body: clamp(15px, calc(14.5px + 0.25vw), 17px);
+
+  /* ════════════════════════════════════════════════════════════
+     LAYER 4 — Typography System  (Display / Heading / Body / UI)
+     ────────────────────────────────────────────────────────────
+     역할 기반 토큰. 컴포넌트는 이 토큰만 참조한다.
+       · font  → Display·Heading: --font-display / Body·UI: --font-body
+       · size  → 가급적 Layer 1 (--text-*) / clamp
+       · color → 컴포넌트가 컨텍스트에 맞게 지정 (토큰 비포함)
+       · KO 분기 → Layer 5 [lang] 에서 --font-display override
+     ════════════════════════════════════════════════════════════ */
+
+  /* ── Display (--font-display) ── */
+  --display-1-size: var(--text-104); /* clamp(44, 6.6vw, 104) */
+  --display-1-weight: 400;
+  --display-1-line: 1.05;
+  --display-1-letter: var(--tracking-tighter);
+
+  --display-2-size: var(--text-80); /* clamp(56, 5vw, 80) */
+  --display-2-weight: 600;
+  --display-2-line: 1.08;
+  --display-2-letter: var(--tracking-tight);
+
+  --display-3-size: clamp(26px, 3.4vw, 48px);
+  --display-3-weight: 600;
+  --display-3-line: 1;
+  --display-3-letter: var(--tracking-tighter);
+
+  /* ── Heading (--font-display) ── */
+  --h1-weight: 600;
+
+  --h2-size: var(--text-34);
+  --h2-weight: 600;
+  --h2-line: 1.35;
+  --h2-letter: -0.015em;
+
+  --h3-size: var(--text-24);
+  --h3-weight: 500;
+  --h3-line: 1.45;
+  --h3-letter: var(--tracking-tight);
+
+  --h4-size: var(--text-20);
+  --h4-weight: 500;
+  --h4-line: 1.5;
+  --h4-letter: -0.005em;
+
+  --h5-size: var(--res-h5); /* clamp(16, 1.5vw, 22) */
+  --h5-weight: 500;
+
+  --h6-size: var(--text-14);
+  --h6-weight: 500;
+  --h6-line: 1.4;
+  --h6-letter: var(--tracking-snug);
+
+  /* ── Body (--font-body) — 1: Lead/Intro · 2: 기본 · 3: 소형 ── */
+  --body-1-size: clamp(18px, 2vw, 22px);
+  --body-1-weight: 500;
+  --body-1-line: 1.65;
+  --body-1-letter: var(--tracking-tighter);
+
+  --body-2-size: var(--text-16);
+  --body-2-weight: 400;
+  --body-2-line: 1.7;
+  --body-2-letter: var(--tracking-tight);
+
+  --body-3-size: var(--text-15);
+
+  /* ── UI (--font-body) ── */
+  --button-size: var(--text-14);
+  --button-weight: 600;
+  --button-letter: var(--tracking-wide);
+
+  --caption-size: var(--text-12);
+  --caption-weight: 400;
+  --caption-line: 1.5;
+  --caption-letter: var(--tracking-medium);
+
+  --label-size: var(--text-13);
+  --label-weight: 500;
+  --label-line: 1.4;
+  --label-letter: -0.005em;
+
+  --nav-size: var(--text-16);
+  --nav-weight: 600;
+  --nav-letter: var(--tracking-snug);
+
+  /* Overline = .eyebrow (--font-display, UPPERCASE) */
+  --overline-size: var(--text-19);
+  --overline-weight: 600;
+  --overline-letter: var(--tracking-wide);
+
+  /* ─── Layout ─── */
+  --maxw: 2560px;
+  --maxw-02: 1000px;
+  --gutter: var(--space-gutter);
+  --header-h: 92px;
+
+  /* ─── Breakpoints (reference only — CSS @media does not support var()) ─── */
+  --bp-mobile: 860;
+  --bp-small: 600;
+  --bp-treat: 520;
+
+  /* ─── JS Interaction Tokens (reference only — unitless, read by app.js) ─── */
+  --scroll-header-solid: 60;
+  --scroll-header-compact: 80;
+  --scroll-topbtn: 400;
+  --hero-interval: 6000;
+}
+
+/* ════════════════════════════════════════════════════════════
+   LAYER 5 — Language Override
+   ────────────────────────────────────────────────────────────
+   font-family 토큰만 재정의. 크기·굵기·간격·색상은 불변.
+   var(--font-display)를 사용하는 모든 요소에 자동 반영.
+   ════════════════════════════════════════════════════════════ */
+[lang="ko"] {
+  --font-display: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", sans-serif;
+}

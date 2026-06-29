@@ -1,0 +1,517 @@
+/* ============================================================
+   SKIN ANALYSIS — 피부 분석 서비스 Page
+   Style: Monocle Editorial × Apple Clean
+   Depends on: reset.css · theme.css · common.css
+   ============================================================ */
+
+/* → components/topbar.css (기본 56px 그대로 사용) */
+
+/* ─────────────────────────────────────────────────────
+   IMAGE AREA — 풀블리드 드라마틱 이미지
+   ───────────────────────────────────────────────────── */
+.sa-img-area {
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+  height: clamp(340px, 50vw, 660px);
+}
+.sa-img-area__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  opacity: 0.85;
+  transition: opacity 0.6s ease;
+}
+
+/* ─────────────────────────────────────────────────────
+   CONTENT AREA
+   ───────────────────────────────────────────────────── */
+.sa-content {
+  background: var(--bg-white);
+}
+
+/* ─────────────────────────────────────────────────────
+   MAIN TAB — 에디토리얼 언더라인 스타일
+   ───────────────────────────────────────────────────── */
+.sa-tab-wrap {
+  background: var(--surface-blue-500);
+  border-bottom: 1px solid var(--gray-950);
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--gutter);
+}
+
+.sa-tab-selector {
+  display: flex;
+  gap: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.sa-tab-selector .tab-pill__btn {
+  padding: 24px 36px 22px;
+  font-size: var(--text-20);
+  font-weight: 500;
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-gray-2);
+  background: none;
+  border: none;
+  border-bottom: 6px solid transparent;
+  border-radius: 0;
+  margin-bottom: -1px;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+  cursor: pointer;
+}
+.sa-tab-selector .tab-pill__btn.is-active {
+  color: var(--text-white);
+  background: none;
+  font-weight: 600;
+  border-bottom-color: var(--gray-950);
+  background: var(--blue-600);
+}
+@media (hover: hover) {
+  .sa-tab-selector .tab-pill__btn:hover:not(.is-active) {
+    color: var(--text-gray-5);
+    background: none;
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   PANELS
+   ───────────────────────────────────────────────────── */
+.sa-panels {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: clamp(32px, 6vw, 72px) clamp(20px, 4vw, 40px) clamp(64px, 8vw, 100px);
+}
+.sa-panel {
+  display: none;
+}
+.sa-panel.is-active {
+  display: block;
+}
+
+/* ─────────────────────────────────────────────────────
+   패널 헤더
+   ───────────────────────────────────────────────────── */
+.sa-panel__header {
+  padding-bottom: var(--space-40);
+  /* border-bottom: 1px solid var(--gray-950); */
+  margin-bottom: var(--space-16);
+}
+.sa-panel__title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.2vw, 44px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--text-gray-7);
+  margin-bottom: var(--space-14);
+  line-height: 1.1;
+  text-align: center;
+}
+[lang="ko"] .sa-panel__title {
+  font-weight: 700;
+  letter-spacing: var(--tracking-tightest);
+}
+.sa-panel__sub {
+  font-size: var(--text-15);
+  font-weight: 450;
+  color: var(--text-gray-3);
+  line-height: 1.75;
+  word-break: keep-all;
+  text-align: center;
+}
+
+/* ─────────────────────────────────────────────────────
+   서브탭 — 대문자 트래킹 스타일
+   ───────────────────────────────────────────────────── */
+.sa-subtab-nav {
+  display: flex;
+  gap: 0;
+  margin-bottom: var(--space-40);
+  justify-content: center;
+}
+.sa-subtab {
+  padding: 12px 24px;
+  font-size: var(--text-19);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+  color: var(--text-gray-2);
+  background: none;
+  border-bottom: 6px solid var(--gray-300);
+  margin-bottom: -1px;
+  cursor: pointer;
+  transition:
+    color 0.18s,
+    border-color 0.18s;
+  white-space: nowrap;
+}
+.sa-subtab.is-active {
+  color: var(--blue-500);
+  border-bottom-color: var(--blue-500);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+}
+@media (hover: hover) {
+  .sa-subtab:hover:not(.is-active) {
+    color: var(--text-gray-4);
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   서브패널
+   ───────────────────────────────────────────────────── */
+.sa-subpanel {
+  display: none;
+}
+.sa-subpanel.is-active {
+  display: block;
+}
+
+.sa-subpanel__desc {
+  font-size: var(--text-22);
+  color: var(--text-gray-4);
+  line-height: 1.7;
+  margin-bottom: var(--space-32);
+  word-break: keep-all;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ─────────────────────────────────────────────────────
+   캐러셀 — 보더리스, 에디토리얼
+   ───────────────────────────────────────────────────── */
+.sa-carousel {
+  background: var(--bg-white);
+  border: none;
+}
+.sa-carousel__viewport {
+  overflow: hidden;
+}
+.sa-carousel__track {
+  display: flex;
+  transition: transform 0.34s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  gap: 12px;
+}
+.sa-carousel__slide {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+/* ─────────────────────────────────────────────────────
+   슬라이드 — 2컬럼 그리드 (분석 예시 이미지 + 콘텐츠)
+   ───────────────────────────────────────────────────── */
+.sa-slide {
+  display: grid;
+  grid-template-columns: clamp(300px, 42%, 560px) minmax(0, 1fr);
+  gap: 0 clamp(24px, 3vw, 56px);
+  /* padding: clamp(28px, 4vw, 36px) 0; */
+  align-items: center;
+  background: #eee;
+  padding: 24px;
+  border-radius: 24px;
+}
+
+.sa-slide__img {
+  width: 100%;
+  border: 1px solid var(--border-gray-1);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #000;
+  align-self: stretch;
+}
+
+.sa-slide__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+.sa-slide__img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sa-slide__title {
+  font-family: var(--font-display);
+  font-size: clamp(17px, 2vw, 27px);
+  font-weight: 400;
+  color: var(--text-gray-7);
+  margin-bottom: var(--space-0);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+[lang="ko"] .sa-slide__title {
+  font-weight: 700;
+  letter-spacing: var(--tracking-tighter);
+}
+
+.sa-slide__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+.sa-slide__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-10);
+  font-size: var(--text-17);
+  color: var(--text-gray-4);
+  line-height: 1.75;
+  word-break: keep-all;
+  font-weight: 450;
+}
+.sa-slide__list li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--border-gray-2);
+  margin-top: 9px;
+}
+
+/* ─────────────────────────────────────────────────────
+   슬라이드 본문 영역 — 좌우 화살표 + 콘텐츠 (페이지네이션 제외)
+   화살표 높이 기준이 되는 위치 컨텍스트
+   ───────────────────────────────────────────────────── */
+.sa-carousel__body {
+  position: relative;
+}
+
+/* ─────────────────────────────────────────────────────
+   캐러셀 컨트롤 — 페이지네이션 전용
+   ───────────────────────────────────────────────────── */
+.sa-carousel__ctrl {
+  display: flex;
+  align-items: stretch;
+  width: min(440px, 100%);
+  /* margin-top: 16px; */
+  margin: 32px auto;
+  background: var(--bg-white);
+  box-sizing: border-box;
+}
+.sa-carousel__counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  font-size: var(--text-14);
+  font-weight: 500;
+  color: var(--text-gray-4);
+  white-space: nowrap;
+  min-width: 72px;
+}
+
+.sa-carousel__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border-gray-1);
+  border-radius: 0;
+  background: var(--bg-white);
+  color: var(--text-gray-4);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    background 0.18s,
+    border-color 0.18s,
+    color 0.18s;
+}
+@media (hover: hover) {
+  .sa-carousel__arrow:hover:not(:disabled) {
+    background: var(--gray-950);
+    border-color: var(--gray-950);
+    color: var(--text-white);
+  }
+}
+.sa-carousel__arrow:disabled {
+  opacity: 0.22;
+  cursor: default;
+}
+
+.sa-carousel__indicators {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.sa-carousel__dot {
+  width: 36px;
+  height: 36px;
+  border-radius: 0;
+  border: 1px solid var(--border-gray-1);
+  background: var(--bg-white);
+  color: var(--text-gray-2);
+  font-size: var(--text-14);
+  font-weight: 600;
+  letter-spacing: 0;
+  cursor: pointer;
+  transition:
+    background 0.18s,
+    border-color 0.18s,
+    color 0.18s;
+}
+.sa-carousel__dot.is-active {
+  background: var(--gray-950);
+  border-color: var(--gray-950);
+  color: var(--text-white);
+  transform: none;
+  box-shadow: none;
+}
+@media (hover: hover) {
+  .sa-carousel__dot:hover:not(.is-active) {
+    border-color: var(--text-gray-4);
+    color: var(--text-gray-5);
+  }
+}
+
+/* chat-btn — 이 페이지에서 숨김 */
+.chat-btn {
+  display: none !important;
+}
+
+/* ─────────────────────────────────────────────────────
+   PC 전용 — Vimeo 스타일: 중앙 슬라이드 80%, 좌우 10% 피크 영역
+   ───────────────────────────────────────────────────── */
+
+/* ─────────────────────────────────────────────────────
+   Responsive
+   ───────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .sa-tab-selector .tab-pill__btn {
+    padding: 16px 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sa-img-area {
+    height: clamp(240px, 56vw, 380px);
+  }
+
+  .sa-slide {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: var(--space-16) 0;
+  }
+  .sa-slide__img {
+    grid-row: auto;
+  }
+
+  .sa-subtab {
+    padding: 10px 14px;
+    font-size: var(--text-16);
+    letter-spacing: var(--tracking-tight);
+  }
+  .sa-carousel__indicators {
+    display: none;
+  }
+  .sa-tab-selector .tab-pill__btn {
+    padding: 14px 16px;
+    font-size: var(--text-13);
+  }
+  .page-hero__sub br {
+    display: none;
+  }
+  /* 모바일: 컨트롤 영역 유지 (화살표 + 카운터) */
+  .sa-carousel__ctrl {
+    display: flex;
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   Tablet & Mobile (<860) — 화살표를 본문 하단 바 형태로 배치
+   (좌우 절대 배치는 860 이상에서만 적용)
+   ───────────────────────────────────────────────────── */
+@media (max-width: 859px) {
+  .sa-carousel__ctrl .sa-carousel__arrow {
+    position: static;
+    flex: 1 1 0;
+    width: auto;
+    height: 52px;
+    border: 1px solid var(--border-gray-1);
+    background: var(--bg-white);
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   Desktop — 한 슬라이드씩, 화살표는 캐러셀 우측 상단
+   · .sa-carousel__body position:static → 화살표가 .sa-carousel 기준 배치
+   · .sa-carousel position:relative + padding-top으로 화살표 공간 확보
+   · 슬라이드는 100% (피크 없음)
+   ───────────────────────────────────────────────────── */
+@media (min-width: 860px) {
+  .sa-carousel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sa-carousel__body {
+    position: static;
+    overflow: visible;
+  }
+
+  .sa-carousel__viewport {
+    overflow: hidden;
+    padding: 0 60px;
+  }
+
+  .sa-carousel__slide {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
+  .sa-carousel__arrows {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    gap: 2px;
+    z-index: 2;
+  }
+
+  .sa-carousel__arrow {
+    width: 64px;
+    height: 64px;
+    border: 1px solid var(--border-gray-1);
+    background: var(--bg-white);
+    color: var(--text-gray-4);
+    transition:
+      background 0.18s,
+      border-color 0.18s,
+      color 0.18s;
+  }
+
+  .sa-carousel__arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .sa-carousel__ctrl .sa-carousel__arrow {
+    width: auto;
+    height: 64px;
+    flex: 1 1 0;
+  }
+}
+
+@media (min-width: 860px) and (hover: hover) {
+  .sa-carousel__arrow:hover:not(:disabled) {
+    background: var(--gray-950);
+    border-color: var(--gray-950);
+    color: var(--text-white);
+  }
+}

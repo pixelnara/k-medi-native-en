@@ -1,0 +1,857 @@
+/* ============================================================
+   reservation.css — 상담 예약 페이지 (3-STEP 퍼널)
+   Design System: theme.css 토큰 기반 확장
+   ============================================================ */
+
+/* ── Page-level variables ── */
+:root {
+  --rsv-fee-bg: #fef8f0;
+  --rsv-fee-border: #f0e0c8;
+  --rsv-notice-bg: #edf3ff;
+  --rsv-notice-border: var(--blue-100);
+  --rsv-summary-bg: var(--surface-gray-1);
+}
+
+/* ────────────────────────────────────────────────
+   HEADER — Minimal: 햄버거만 노출
+──────────────────────────────────────────────── */
+.header--reservation .header__util,
+.header--reservation .brand,
+.header--reservation .header__tagline,
+.header--reservation .gnb,
+.header--reservation .header__right .btn--primary2,
+.header--reservation .header-lang-btn,
+.header--reservation .header-mypage-btn {
+  display: none;
+}
+
+.header--reservation,
+.header--reservation.is-solid {
+  background: transparent;
+  box-shadow: none;
+}
+
+.header--reservation .header__main .wrap {
+  justify-content: flex-end;
+}
+
+/* ────────────────────────────────────────────────
+   HERO — Page title + step indicator
+──────────────────────────────────────────────── */
+.rsv-hero {
+  padding: calc(var(--header-h) + 56px) 0 40px;
+  text-align: center;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-gray-2);
+}
+
+.rsv-hero__title {
+  font-family: var(--font-body);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  color: var(--text-gray-6);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.15;
+  margin-bottom: var(--space-10);
+}
+
+.rsv-hero__sub {
+  font-size: var(--text-15);
+  color: var(--text-gray-3);
+  margin-bottom: var(--space-36);
+}
+
+/* ── Step Indicator ── */
+.rsv-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.rsv-step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  flex-shrink: 0;
+}
+
+.rsv-step__num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-gray-2);
+  background: var(--bg-white);
+  color: var(--text-gray-2);
+  font-size: var(--text-14);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.rsv-step__label {
+  font-size: var(--text-14);
+  font-weight: 500;
+  color: var(--text-gray-2);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.rsv-step.is-active .rsv-step__num,
+.rsv-step.is-done .rsv-step__num {
+  background: var(--btn-primary);
+  border-color: var(--btn-primary);
+  color: var(--text-white);
+}
+
+.rsv-step.is-active .rsv-step__label {
+  color: var(--text-gray-6);
+  font-weight: 600;
+}
+
+.rsv-step.is-done .rsv-step__label {
+  color: var(--text-gray-4);
+}
+
+.rsv-step__line {
+  flex: 1;
+  height: 1px;
+  background: var(--border-gray-2);
+  min-width: 32px;
+  max-width: 80px;
+  margin: 0 var(--space-8);
+}
+
+/* ────────────────────────────────────────────────
+   BODY — Form wrapper
+──────────────────────────────────────────────── */
+.rsv-body {
+  background: var(--bg-warm);
+  padding: clamp(40px, 6vw, 72px) 0 clamp(64px, 9vw, 120px);
+}
+
+.rsv-container {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ── Step Panels ── */
+.rsv-panel {
+  display: none;
+}
+
+.rsv-panel.is-active {
+  display: block;
+}
+
+/* ── Card (form container) ── */
+.rsv-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-gray-2);
+  border-radius: 2px;
+  padding: clamp(28px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+/* ────────────────────────────────────────────────
+   FIELD GROUPS
+──────────────────────────────────────────────── */
+.rsv-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.rsv-field-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.rsv-field-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  font-size: var(--text-14);
+  font-weight: 600;
+  color: var(--text-gray-6);
+}
+
+.rsv-field-label svg {
+  color: var(--text-gray-4);
+  flex-shrink: 0;
+}
+
+.rsv-required {
+  color: #c0392b;
+  font-weight: 700;
+  margin-left: 1px;
+}
+
+.rsv-field-sub {
+  font-size: var(--text-13);
+  color: var(--text-gray-3);
+  padding-left: var(--space-20);
+}
+
+.rsv-field-hint {
+  font-size: var(--text-12);
+  color: var(--text-gray-2);
+  margin-top: -var(--space-4);
+}
+
+.rsv-field-error {
+  font-size: var(--text-12);
+  color: #c0392b;
+  display: none;
+}
+
+.rsv-field-error.is-visible {
+  display: block;
+}
+
+/* ── 2-column row ── */
+.rsv-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-20);
+}
+
+/* ────────────────────────────────────────────────
+   PROCEDURE CHIPS
+──────────────────────────────────────────────── */
+.rsv-chips {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.rsv-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px var(--space-16);
+  font-size: var(--text-15);
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: var(--text-gray-5);
+  background: var(--bg-white);
+  border: 1px solid var(--border-gray-2);
+  border-radius: 0;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+  line-height: 1;
+  text-align: center;
+}
+
+@media (hover: hover) {
+  .rsv-chip:hover {
+    border-color: var(--border-gray-4);
+    color: var(--text-gray-6);
+  }
+}
+
+.rsv-chip.is-selected {
+  background: var(--btn-primary);
+  border-color: var(--btn-primary);
+  color: var(--text-white);
+}
+
+/* ────────────────────────────────────────────────
+   INPUTS
+──────────────────────────────────────────────── */
+.rsv-input,
+.rsv-select,
+.rsv-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border-gray-2);
+  border-radius: 2px;
+  background: var(--bg-white);
+  font-family: var(--font-body);
+  font-size: var(--text-15);
+  font-weight: 400;
+  color: var(--text-gray-6);
+  outline: none;
+  transition:
+    border-color 0.18s,
+    box-shadow 0.18s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.rsv-input::placeholder,
+.rsv-textarea::placeholder {
+  color: var(--text-gray-1);
+}
+
+.rsv-input:focus,
+.rsv-select:focus,
+.rsv-textarea:focus {
+  border-color: var(--text-gray-7);
+  box-shadow: inset 0 0 0 1px var(--text-gray-7);
+}
+
+.rsv-input[type="date"] {
+  cursor: pointer;
+}
+
+/* ── Select wrapper (custom chevron) ── */
+.rsv-select-wrap {
+  position: relative;
+}
+
+.rsv-select-wrap .rsv-select {
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.rsv-select-chevron {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-gray-3);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Textarea ── */
+.rsv-textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.65;
+}
+
+.rsv-textarea-wrap {
+  position: relative;
+}
+
+.rsv-textarea-wrap .rsv-textarea {
+  padding-bottom: 40px;
+}
+
+.rsv-textarea-send {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--btn-primary);
+  border: none;
+  border-radius: 50%;
+  color: var(--text-white);
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+@media (hover: hover) {
+  .rsv-textarea-send:hover {
+    background: var(--btn-secondary);
+  }
+}
+
+/* ────────────────────────────────────────────────
+   FEE INFO BOX
+──────────────────────────────────────────────── */
+.rsv-fee-box {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-14);
+  padding: var(--space-20) var(--space-24);
+  background: var(--rsv-fee-bg);
+  border: 1px solid var(--rsv-fee-border);
+  border-radius: 2px;
+}
+
+.rsv-fee-box__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f0d5a8;
+  color: #8a6020;
+  font-size: var(--text-16);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rsv-fee-box__title {
+  font-size: var(--text-16);
+  font-weight: 700;
+  color: var(--text-gray-6);
+  margin-bottom: var(--space-4);
+}
+
+.rsv-fee-box__desc {
+  font-size: var(--text-13);
+  color: var(--text-gray-3);
+  line-height: 1.6;
+}
+
+/* ────────────────────────────────────────────────
+   STEP 2 — Member notice
+──────────────────────────────────────────────── */
+.rsv-member-notice {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  padding: 14px var(--space-16);
+  background: var(--rsv-notice-bg);
+  border: 1px solid var(--rsv-notice-border);
+  border-radius: 2px;
+  font-size: var(--text-13);
+  color: var(--accent-blue);
+  font-weight: 500;
+}
+
+.rsv-member-notice svg {
+  flex-shrink: 0;
+}
+
+/* ── Optional section divider ── */
+.rsv-optional-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.rsv-optional-label {
+  font-size: var(--text-13);
+  font-weight: 600;
+  color: var(--text-gray-3);
+  padding-bottom: var(--space-10);
+  border-bottom: 1px solid var(--border-gray-2);
+  letter-spacing: var(--tracking-snug);
+}
+
+/* ────────────────────────────────────────────────
+   STEP 3 — Summary
+──────────────────────────────────────────────── */
+.rsv-summary-title {
+  font-size: var(--text-15);
+  font-weight: 700;
+  color: var(--text-gray-6);
+  margin-bottom: var(--space-16);
+}
+
+.rsv-summary-card {
+  background: var(--rsv-summary-bg);
+  border-radius: 2px;
+  padding: var(--space-20) var(--space-24);
+}
+
+.rsv-summary-card + .rsv-summary-card {
+  margin-top: var(--space-12);
+}
+
+.rsv-summary-label {
+  font-size: var(--text-13);
+  font-weight: 600;
+  color: var(--text-gray-3);
+  margin-bottom: var(--space-12);
+}
+
+.rsv-summary-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.rsv-summary-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: var(--accent-blue);
+  color: var(--text-white);
+  font-size: var(--text-13);
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+.rsv-summary-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+}
+
+.rsv-summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.rsv-summary-item__label {
+  font-size: var(--text-12);
+  color: var(--text-gray-2);
+}
+
+.rsv-summary-item__value {
+  font-size: var(--text-15);
+  font-weight: 600;
+  color: var(--text-gray-6);
+}
+
+.rsv-summary-booker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8) var(--space-20);
+}
+
+.rsv-summary-booker-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  font-size: var(--text-13);
+  color: var(--text-gray-5);
+}
+
+.rsv-summary-booker-item svg {
+  color: var(--text-gray-2);
+  flex-shrink: 0;
+}
+
+.rsv-summary-text {
+  font-size: var(--text-15);
+  color: var(--text-gray-5);
+  line-height: 1.6;
+}
+
+/* ────────────────────────────────────────────────
+   ACTIONS — navigation buttons
+──────────────────────────────────────────────── */
+.rsv-actions {
+  margin-top: var(--space-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.rsv-actions--row {
+  flex-direction: row;
+  align-items: center;
+}
+
+.rsv-actions--row .rsv-btn-next,
+.rsv-actions--row .rsv-btn-pay {
+  flex: 2;
+}
+
+.rsv-actions--row .rsv-btn-prev {
+  flex: 1;
+}
+
+.rsv-btn-next,
+.rsv-btn-prev,
+.rsv-btn-pay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+}
+
+/* Step 1: next button full width */
+.rsv-panel:first-child .rsv-actions .rsv-btn-next {
+  width: 100%;
+}
+
+/* ────────────────────────────────────────────────
+   PAYMENT MODAL
+──────────────────────────────────────────────── */
+.rsv-pay-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  align-items: center;
+  justify-content: center;
+}
+
+.rsv-pay-modal.is-open {
+  display: flex;
+}
+
+.rsv-pay-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-50);
+}
+
+.rsv-pay-modal__box {
+  position: relative;
+  background: var(--bg-white);
+  border-radius: 2px;
+  width: 100%;
+  max-width: 420px;
+  margin: var(--space-16);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.rsv-pay-modal__head {
+  padding: var(--space-24) var(--space-28);
+  border-bottom: 1px solid var(--border-gray-2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rsv-pay-modal__title {
+  font-size: var(--text-17);
+  font-weight: 700;
+  color: var(--text-gray-7);
+  letter-spacing: var(--tracking-tight);
+}
+
+.rsv-pay-modal__close {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-gray-3);
+  border-radius: 50%;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+@media (hover: hover) {
+  .rsv-pay-modal__close:hover {
+    background: var(--surface-gray-1);
+    color: var(--text-gray-6);
+  }
+}
+
+.rsv-pay-modal__body {
+  padding: var(--space-24) var(--space-28);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.rsv-pay-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  padding: var(--space-16) var(--space-20);
+  border: 1.5px solid var(--border-gray-2);
+  border-radius: 2px;
+  background: var(--bg-white);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+  width: 100%;
+}
+
+@media (hover: hover) {
+  .rsv-pay-option:hover {
+    border-color: var(--btn-primary);
+    background: var(--surface-gray-1);
+  }
+}
+
+.rsv-pay-option__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface-gray-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--text-gray-4);
+}
+
+.rsv-pay-option__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.rsv-pay-option__title {
+  font-size: var(--text-15);
+  font-weight: 600;
+  color: var(--text-gray-6);
+}
+
+.rsv-pay-option__sub {
+  font-size: var(--text-12);
+  color: var(--text-gray-2);
+}
+
+.rsv-pay-modal__foot {
+  padding: var(--space-12) var(--space-28) var(--space-20);
+}
+
+.rsv-pay-modal__hint {
+  font-size: var(--text-12);
+  color: var(--text-gray-2);
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ────────────────────────────────────────────────
+   COMPLETE PAGE (예약 완료)
+──────────────────────────────────────────────── */
+.rsv-complete {
+  text-align: center;
+  padding: var(--space-64) var(--space-20);
+}
+
+.rsv-complete__icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--btn-primary);
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-24);
+}
+
+.rsv-complete__title {
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 700;
+  color: var(--text-gray-6);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-12);
+}
+
+.rsv-complete__desc {
+  font-size: var(--text-15);
+  color: var(--text-gray-3);
+  line-height: 1.7;
+  margin-bottom: var(--space-36);
+}
+
+/* ────────────────────────────────────────────────
+   RESPONSIVE — Tablet / Mobile
+──────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .rsv-hero {
+    padding-top: calc(var(--header-h) + 40px);
+    padding-bottom: var(--space-28);
+  }
+
+  .rsv-stepper {
+    max-width: 100%;
+    gap: 0;
+  }
+
+  .rsv-step__label {
+    font-size: var(--text-12);
+  }
+
+  .rsv-step__line {
+    min-width: 16px;
+    margin: 0 var(--space-4);
+  }
+}
+
+@media (max-width: 600px) {
+  .rsv-hero__title {
+    font-size: clamp(22px, 6vw, 28px);
+  }
+
+  .rsv-hero__sub {
+    font-size: var(--text-14);
+    margin-bottom: var(--space-24);
+  }
+
+  .rsv-stepper {
+    max-width: 100%;
+  }
+
+  .rsv-step__num {
+    width: 28px;
+    height: 28px;
+    font-size: var(--text-13);
+  }
+
+  .rsv-step__label {
+    font-size: 11px;
+  }
+
+  .rsv-body {
+    padding: var(--space-24) 0 clamp(80px, 20vw, 120px);
+  }
+
+  .rsv-card {
+    padding: var(--space-24);
+    gap: var(--space-24);
+  }
+
+  .rsv-chips {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rsv-chip {
+    font-size: var(--text-14);
+    padding: 16px var(--space-12);
+  }
+
+  .rsv-field-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-16);
+  }
+
+  .rsv-summary-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  .rsv-actions--row {
+    flex-direction: column-reverse;
+  }
+
+  .rsv-actions--row .rsv-btn-next,
+  .rsv-actions--row .rsv-btn-pay,
+  .rsv-actions--row .rsv-btn-prev {
+    flex: unset;
+    width: 100%;
+  }
+
+  .rsv-pay-modal__box {
+    margin: 0;
+    max-width: 100%;
+    border-radius: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 90dvh;
+    overflow-y: auto;
+  }
+
+  .rsv-pay-modal {
+    align-items: flex-end;
+  }
+}
