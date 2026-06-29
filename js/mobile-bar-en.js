@@ -33,7 +33,7 @@
   var filename = window.location.pathname.split('/').pop() || 'index.html';
   var activeLabel = PAGE_ACTIVE[filename] || null;
   // 루트(/)에서 열릴 땐 영문 페이지가 en/ 하위에 있으므로 접두어를 붙인다.
-  var base = /\/en\//.test(window.location.pathname) ? '' : 'en/';
+  var base = '';
   var theme = document.body.dataset.mbarTheme || 'dark';
 
   var nav = document.createElement('nav');
