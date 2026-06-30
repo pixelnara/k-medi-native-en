@@ -1,9 +1,7 @@
 (function () {
   var isEN = document.documentElement.lang === 'en' || location.pathname.indexOf('/en/') !== -1;
   var chatLabel = isEN ? 'Contact' : '문의하기';
-  // 예약 페이지 경로 (현재 폴더 깊이에 맞춰 계산)
-  var inLangFolder = location.pathname.indexOf('/ko/') !== -1 || location.pathname.indexOf('/en/') !== -1;
-  var reservationHref = inLangFolder ? 'reservation.html' : (isEN ? 'en/reservation.html' : 'ko/reservation.html');
+  var reservationHref = 'reservation.html';
   var html = [
     '<button class="chat-btn" id="chatBtn" aria-label="' + chatLabel + '" aria-expanded="false">',
     '  <svg class="chat-icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">',
