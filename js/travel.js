@@ -259,17 +259,22 @@
     });
   });
 
-  /* ── 컬럼(그리드) 토글 ── */
-  document.querySelectorAll('[data-cols]').forEach(function (btn) {
+  /* ── 컬럼(그리드) 토글 (단일 버튼 순환) ── */
+  var COL_ICONS = {
+    '1': '<rect x="6.5" y="6.5" width="11" height="11" rx="2" />',
+    '2': '<rect x="3.5" y="3.5" width="7" height="7" rx="1.3" /><rect x="13.5" y="3.5" width="7" height="7" rx="1.3" /><rect x="3.5" y="13.5" width="7" height="7" rx="1.3" /><rect x="13.5" y="13.5" width="7" height="7" rx="1.3" />'
+  };
+  document.querySelectorAll('.tv-col-toggle').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var key = btn.dataset.cols;
-      document.querySelectorAll('[data-cols="' + key + '"]').forEach(function (b) {
-        b.classList.toggle('is-active', b === btn);
-      });
+      var next = btn.dataset.val === '1' ? '2' : '1';
+      btn.dataset.val = next;
+      var ico = btn.querySelector('.tv-col-ico');
+      if (ico) ico.innerHTML = COL_ICONS[next];
       var grid = document.getElementById('grid-' + key);
       if (grid) {
         grid.classList.remove('tv-grid--c1', 'tv-grid--c2');
-        grid.classList.add('tv-grid--c' + btn.dataset.val);
+        grid.classList.add('tv-grid--c' + next);
       }
     });
   });

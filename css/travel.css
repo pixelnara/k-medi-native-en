@@ -191,34 +191,26 @@
 }
 
 /* ── COLUMN (GRID) TOGGLE ── */
-.tv-cols {
-  display: inline-flex;
-  align-items: center;
-  border: 1px solid var(--border-gray-1);
-  border-radius: 2px;
-  overflow: hidden;
-}
-.tv-col {
+.tv-col-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
-  border: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border-gray-1);
+  border-radius: 2px;
   background: var(--bg-white);
-  color: var(--text-gray-2);
+  color: var(--text-gray-6);
   cursor: pointer;
-  transition: background 0.15s, color 0.15s;
+  transition: border-color 0.2s, color 0.2s;
 }
-.tv-col + .tv-col {
-  border-left: 1px solid var(--border-gray-1);
-}
-.tv-col.is-active {
-  background: var(--surface-gray-1);
-  color: var(--accent-gray-1);
+.tv-col-toggle .tv-col-ico {
+  width: 18px;
+  height: 18px;
 }
 @media (hover: hover) {
-  .tv-col:hover {
+  .tv-col-toggle:hover {
+    border-color: var(--gray-500);
     color: var(--accent-gray-1);
   }
 }
