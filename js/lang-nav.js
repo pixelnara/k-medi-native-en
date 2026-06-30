@@ -14,7 +14,7 @@
   /** Returns current filename */
   function getCurrentFilename() {
     const raw = location.pathname.split("/").pop();
-    return (raw && raw.endsWith(".html")) ? raw : "index.html";
+    return raw && raw.endsWith(".html") ? raw : "index.html";
   }
 
   /** Returns URL for the given language code */
