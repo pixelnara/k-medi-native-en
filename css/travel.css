@@ -65,7 +65,9 @@
   background: var(--bg-white);
   color: var(--text-gray-5);
   cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
 }
 @media (hover: hover) {
   .tv-searchbtn:hover {
@@ -192,17 +194,24 @@
 
 /* ── COLUMN (GRID) TOGGLE ── */
 .tv-col-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--border-gray-1);
-  border-radius: 2px;
-  background: var(--bg-white);
-  color: var(--text-gray-6);
-  cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
+  display: none;
+}
+@media (max-width: 640px) {
+  .tv-col-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border-gray-1);
+    border-radius: 2px;
+    background: var(--bg-white);
+    color: var(--text-gray-6);
+    cursor: pointer;
+    transition:
+      border-color 0.2s,
+      color 0.2s;
+  }
 }
 .tv-col-toggle .tv-col-ico {
   width: 18px;
@@ -220,10 +229,10 @@
 .tv-chips {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   gap: var(--space-2);
   margin-bottom: var(--space-20);
-  padding: 0 clamp(24px, 4vw, 80px);
+  padding: 0 clamp(12px, 4vw, 80px);
 }
 
 /* ── CARD GRID ──
@@ -232,7 +241,7 @@
    space-between 으로 좌우 끝(양쪽 마진)을 카드가 채우고 여백은 카드 사이로 분배. */
 .tv-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 320px);
+  grid-template-columns: repeat(auto-fill, 300px);
   justify-content: center;
   gap: var(--space-12);
   padding: 0 clamp(12px, 4vw, 80px);
@@ -502,6 +511,18 @@
   }
   .tv-grid.tv-grid--c2 {
     grid-template-columns: 1fr 1fr;
+  }
+  .tv-grid.tv-grid--c2 .tv-card__title,
+  .tv-grid.tv-grid--c2 .tv-card__desc,
+  .tv-grid.tv-grid--c2 .tv-card__addr {
+    font-size: 11px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .tv-grid {
+    padding: 0 24px;
   }
   .tv-toolbar {
     gap: var(--space-12);
