@@ -1070,4 +1070,10 @@ ul.gnb-sub-list.gnb-sub-list--flat {
   .header__right {
     order: 2;
   }
+  /* 우측 햄버거 옆 언어 선택 버튼 */
+  .header-right-lang-btn {
+    display: flex !important;
+    width: auto !important;
+    gap: var(--space-3);
+  }
 }
