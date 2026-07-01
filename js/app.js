@@ -28,7 +28,7 @@
     topBtn: tok("--scroll-topbtn", 400),
   };
   const HERO = {
-    interval: tok("--hero-interval", 6000),
+    interval: tok("--hero-interval", 10000),
   };
   // 외부(페이지별 스크립트)에서도 공유할 수 있도록 노출
   window.KMT = window.KMT || {};
