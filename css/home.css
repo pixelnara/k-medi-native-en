@@ -89,9 +89,15 @@
   letter-spacing: var(--tracking-tightest);
   max-width: 20ch;
   color: var(--text-white);
+  text-shadow: 0 3px 1px rgba(0, 0, 0, 0.35);
   opacity: 0;
   transform: translateY(28px);
   animation: rise 1s 0.35s forwards;
+}
+@media (max-width: 860px) {
+  .hero__title {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
 }
 .hero__desc {
   font-family: var(--font-body);
@@ -105,6 +111,11 @@
   opacity: 0;
   transform: translateY(20px);
   animation: rise 1s 0.55s forwards;
+}
+@media (max-width: 860px) {
+  .hero__desc {
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+  }
 }
 .hero__cta {
   display: none;
