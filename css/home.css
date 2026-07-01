@@ -876,6 +876,7 @@
 .news-grid .news-card__title {
   /* font-family은 base의 --font-display 유지 (EN Optima / KO Pretendard) */
   font-size: var(--h3-size);
+  font-weight: var(--h1-weight);
 }
 .news-grid .news-card__date {
   font-family: var(--font-body);
