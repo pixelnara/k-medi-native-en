@@ -45,28 +45,28 @@
   }
 }
 .hero__slide--first {
-  background-image: url("../assets/img/1-page-home/01_main_banner/test-forest.png");
+  background-image: url("../assets/img/1-page-home/01_main_banner/hero-6.png");
 }
 @media (max-width: 860px) {
   .hero__slide--first {
-    background-image: url("../assets/img/1-page-home/01_main_banner/test-forest.png");
+    background-image: url("../assets/img/1-page-home/01_main_banner/hero-6.png");
   }
 }
-.hero__slide--hero23 {
-  background-image: url("../assets/img/1-page-home/01_main_banner/hero-23-pc.png");
-}
-@media (max-width: 860px) {
-  .hero__slide--hero23 {
-    background-image: url("../assets/img/1-page-home/01_main_banner/hero-23-mo.png");
-  }
-}
-.hero__slide--beauty {
+.hero__slide--2nd {
   background-image: url("../assets/img/1-page-home/01_main_banner/hero-8.png");
 }
-.hero__slide--solution {
+.hero__slide--3rd {
   background-image: url("../assets/img/1-page-home/01_main_banner/hero-17.png");
 }
-.hero__slide--heritage {
+.hero__slide--4th {
+  background-image: url("../assets/img/1-page-home/01_main_banner/hero-7.png");
+}
+@media (max-width: 860px) {
+  .hero__slide--4th {
+    background-image: url("../assets/img/1-page-home/01_main_banner/hero-7.png");
+  }
+}
+.hero__slide--5th {
   background-image: url("../assets/img/1-page-home/01_main_banner/hero-20.jpeg");
 }
 .hero__slide::after {
