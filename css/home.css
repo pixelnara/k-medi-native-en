@@ -45,41 +45,51 @@
   }
 }
 .hero__slide--first {
-  background-image: url("../assets/img/1-page-home/01_main_banner/leaves.png");
+  background-image: url("../assets/img/1-page-home/01_main_banner/ai2/2-tourist/illust-girl-back6.png");
   background-position: center center;
 }
 @media (max-width: 860px) {
   .hero__slide--first {
-    background-image: url("../assets/img/1-page-home/01_main_banner/leaves.png");
+    background-image: url("../assets/img/1-page-home/01_main_banner/ai2/2-tourist/illust6-m2.png");
     background-position: center center;
   }
 }
 .hero__slide--2nd {
-  background-image: url("../assets/img/1-page-home/01_main_banner/dark-blue.png");
+  background-image: url("../assets/img/1-page-home/01_main_banner/ai2/2-tourist/illust-girl-back4.png");
   background-position: center center;
 }
 @media (max-width: 860px) {
   .hero__slide--2nd {
-    background-image: url("../assets/img/1-page-home/01_main_banner/dark-blue.png");
+    background-image: url("../assets/img/1-page-home/01_main_banner/ai2/2-tourist/illust4-m2.png");
     background-position: center center;
   }
 }
 .hero__slide--3rd {
-  background-image: url("../assets/img/1-page-home/01_main_banner/dark-blue.png");
+  background-image: url("../assets/img/1-page-home/01_main_banner/ai2/1-concierge/illust1-formal.png");
   background-position: center center;
 }
+@media (max-width: 860px) {
+  .hero__slide--3rd {
+    background-image: url("../assets/img/1-page-home/01_main_banner/ai2/1-concierge/illust1-formal-m.png");
+    background-position: center center;
+  }
+}
 .hero__slide--4th {
-  background-image: url("../assets/img/1-page-home/01_main_banner/dark-blue.png");
+  background-image: url("../assets/img/1-page-home/01_main_banner/ai2/1-concierge/illust2-hanbok.png");
   background-position: center center;
 }
 @media (max-width: 860px) {
   .hero__slide--4th {
-    background-image: url("../assets/img/1-page-home/01_main_banner/leaves.png");
+    background-image: url("../assets/img/1-page-home/01_main_banner/ai2/1-concierge/illust2-hanbok-m.png");
     background-position: center center;
   }
 }
 .hero__slide--5th {
-  background-image: url("../assets/img/1-page-home/01_main_banner/leaves.png");
+  background-image: url("../assets/img/1-page-home/01_main_banner/ai2/2-tourist/pic-girl-back.png");
+  background-position: center center;
+}
+.hero__slide--6th {
+  background-image: url("../assets/img/1-page-home/01_main_banner/ai2/3-diorama/dio-1.png");
   background-position: center center;
 }
 .hero__slide::after {
