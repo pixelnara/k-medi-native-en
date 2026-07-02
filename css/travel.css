@@ -61,7 +61,7 @@
   height: 38px;
   flex: 0 0 auto;
   border: 1px solid var(--border-gray-1);
-  border-radius: 999px;
+  border-radius: 2px;
   background: var(--bg-white);
   color: var(--text-gray-5);
   cursor: pointer;
@@ -141,7 +141,7 @@
   right: 0;
   background: var(--bg-white);
   border: 1px solid var(--border-gray-1);
-  border-radius: 10px;
+  border-radius: 2px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   min-width: 120px;
   display: none;
@@ -229,7 +229,7 @@
 .tv-chips {
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center;
   gap: var(--space-2);
   margin-bottom: var(--space-20);
   padding: 0 clamp(12px, 4vw, 80px);
@@ -278,7 +278,7 @@
 }
 .tv-detail__panel {
   position: relative;
-  width: min(680px, 100%);
+  width: 100%;
   background: var(--bg-white);
   overflow-y: auto;
   transform: translateX(100%);
@@ -313,7 +313,7 @@
 .tv-detail__carousel {
   position: relative;
   margin: 0 24px 24px;
-  border-radius: 12px;
+  border-radius: 2px;
   overflow: hidden;
   aspect-ratio: 16/9;
   background: var(--bg-gray);
@@ -338,7 +338,7 @@
   font-size: 12px;
   font-weight: 600;
   padding: 4px 10px;
-  border-radius: 100px;
+  border-radius: 2px;
 }
 .tv-detail__cdots {
   position: absolute;
@@ -363,7 +363,7 @@
 .tv-detail__cdot.is-active {
   background: var(--text-white);
   width: 18px;
-  border-radius: 100px;
+  border-radius: 2px;
 }
 
 /* 상세 내용 */
@@ -376,7 +376,7 @@
   font-weight: 700;
   color: var(--accent-gray-1);
   background: var(--surface-gray-1);
-  border-radius: 100px;
+  border-radius: 2px;
   padding: 4px 12px;
   margin-bottom: var(--space-12);
   letter-spacing: var(--tracking-medium);
@@ -426,7 +426,7 @@
   margin-bottom: var(--space-32);
 }
 .tv-detail__cat-item {
-  border-radius: 10px;
+  border-radius: 2px;
   overflow: hidden;
   position: relative;
   aspect-ratio: 1;
@@ -453,7 +453,7 @@
 /* CTA inside detail */
 .tv-detail__cta {
   background: var(--surface-gray-1);
-  border-radius: 12px;
+  border-radius: 2px;
   padding: var(--space-24);
 }
 .tv-detail__cta-title {
@@ -477,7 +477,7 @@
   color: var(--text-white);
   font-size: var(--text-14);
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 2px;
   border: none;
   cursor: pointer;
   margin-bottom: var(--space-16);
@@ -499,6 +499,93 @@
   display: flex;
   align-items: center;
   gap: var(--space-8);
+}
+
+/* 편의시설 */
+.tv-detail__amenity-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-10);
+  margin-bottom: var(--space-32);
+}
+.tv-detail__amenity-chip {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  border: 1px solid var(--border-gray-1);
+  border-radius: 2px;
+  font-size: var(--text-13);
+  font-weight: 500;
+  color: var(--text-gray-5);
+}
+.tv-detail__amenity-chip-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+.tv-detail__amenity-chip-label svg {
+  flex: none;
+  color: var(--accent-gray-1);
+}
+
+/* 객실 유형 */
+.tv-detail__rooms-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+}
+.tv-detail__rooms-note {
+  font-size: var(--text-12);
+  color: var(--text-gray-2);
+  margin-bottom: var(--space-14);
+}
+.tv-detail__room-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-12);
+  margin-bottom: var(--space-32);
+}
+.tv-detail__room-img-wrap {
+  border-radius: 2px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--bg-gray);
+  margin-bottom: var(--space-8);
+}
+.tv-detail__room-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tv-detail__room-title {
+  font-size: var(--text-14);
+  font-weight: 700;
+  color: var(--text-gray-6);
+  margin-bottom: 2px;
+}
+.tv-detail__room-sub {
+  font-size: var(--text-12);
+  color: var(--text-gray-3);
+  line-height: 1.5;
+}
+
+/* 지도 */
+#tvDetailMap {
+  padding: 0 24px 40px;
+}
+.tv-detail__map-embed {
+  border-radius: 2px;
+  overflow: hidden;
+  aspect-ratio: 16/7;
+  background: var(--bg-gray);
+}
+.tv-detail__map-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 
 /* ── RESPONSIVE ── */
@@ -523,7 +610,7 @@
     display: none;
   }
   .tv-chip {
-    border-radius: 999px;
+    border-radius: 2px;
     padding: 7px 14px;
     font-size: var(--text-13);
     flex-shrink: 0;
@@ -540,7 +627,7 @@
   .tv-searchbtn {
     width: 100%;
     height: 42px;
-    border-radius: 8px;
+    border-radius: 2px;
     justify-content: flex-start;
     padding: 0 14px;
     gap: 10px;
@@ -559,7 +646,7 @@
   }
   .tv-search__input {
     height: 42px;
-    border-radius: 8px;
+    border-radius: 2px;
   }
 
   /* Toolbar: unified height, consistent padding */
@@ -573,7 +660,7 @@
     width: 36px;
     padding: 0;
     justify-content: center;
-    border-radius: 6px;
+    border-radius: 2px;
   }
   .tv-sort__label {
     display: none;
@@ -581,7 +668,7 @@
   .tv-col-toggle {
     width: 36px;
     height: 36px;
-    border-radius: 6px;
+    border-radius: 2px;
   }
   .tv-count {
     font-size: var(--text-13);
@@ -610,5 +697,11 @@
 
   .tv-detail__cat-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .tv-detail__amenity-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tv-detail__room-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

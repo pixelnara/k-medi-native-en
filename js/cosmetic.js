@@ -91,7 +91,7 @@
       rating: 4.6,
       popularity: 82,
       tags: ["보습", "탄력"],
-      img: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=70",
+      img: "assets/img/7-cosmetic/9-20289233-2407-4357-94e2-411778be9ad0.png",
     },
     {
       id: 10,
@@ -101,7 +101,7 @@
       rating: 4.8,
       popularity: 90,
       tags: ["재생", "진정"],
-      img: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=600&q=70",
+      img: "assets/img/7-cosmetic/10-77037a92-770f-4f6f-8b25-4ef6ff4cfd81.png",
     },
     {
       id: 11,
@@ -111,7 +111,7 @@
       rating: 4.5,
       popularity: 70,
       tags: ["활력", "광채"],
-      img: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=600&q=70",
+      img: "assets/img/7-cosmetic/11-5a671248-69a9-4590-ab65-3239b3d06130.png",
     },
   ];
 

@@ -43,7 +43,7 @@
   font-weight: 600;
   color: var(--accent-gray-1);
   background: var(--surface-gray-1);
-  border-radius: 100px;
+  border-radius: 2px;
   padding: var(--space-3) 9px;
   letter-spacing: var(--tracking-loose);
 }
