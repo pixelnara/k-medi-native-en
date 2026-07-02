@@ -567,9 +567,10 @@
   flex-shrink: 0;
   margin-bottom: var(--space-20);
 }
-.why-journey__icon-wrap svg {
-  width: 34px;
-  height: 34px;
+.why-journey__icon-wrap svg,
+.why-journey__icon-wrap img {
+  width: 80px;
+  height: 80px;
   display: block;
 }
 .why-journey__icon-label {
@@ -715,9 +716,10 @@
     height: 48px;
     margin-bottom: 0;
   }
-  .why-journey__icon-wrap svg {
-    width: 26px;
-    height: 26px;
+  .why-journey__icon-wrap svg,
+  .why-journey__icon-wrap img {
+    width: 48px;
+    height: 48px;
   }
   /* 우측: 제목(라벨) + 설명. 서브태그라인은 모바일에서 숨김 */
   .why-journey__icon-right {
