@@ -88,6 +88,12 @@
   background-image: url("../assets/img/1-page-home/01_main_banner/ai2/2-tourist/pic-girl-back.png");
   background-position: center center;
 }
+@media (max-width: 860px) {
+  .hero__slide--5th {
+    background-image: url("../assets/img/1-page-home/01_main_banner/ai2/2-tourist/pic-girl-back-m2.png");
+    background-position: center center;
+  }
+}
 .hero__slide--6th {
   background-image: url("../assets/img/1-page-home/01_main_banner/ai2/3-diorama/dio-1.png");
   background-position: center center;
