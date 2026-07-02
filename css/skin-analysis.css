@@ -36,7 +36,7 @@
    MAIN TAB — 에디토리얼 언더라인 스타일
    ───────────────────────────────────────────────────── */
 .sa-tab-wrap {
-  background: var(--surface-blue-500);
+  background: var(--surface-gray-1);
   border-bottom: 1px solid var(--gray-950);
   display: flex;
   justify-content: center;
@@ -70,11 +70,10 @@
   cursor: pointer;
 }
 .sa-tab-selector .tab-pill__btn.is-active {
-  color: var(--text-white);
+  color: var(--text-gray-6);
   background: none;
   font-weight: 600;
   border-bottom-color: var(--gray-950);
-  background: var(--blue-600);
 }
 @media (hover: hover) {
   .sa-tab-selector .tab-pill__btn:hover:not(.is-active) {
