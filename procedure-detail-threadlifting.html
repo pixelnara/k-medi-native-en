@@ -3,14 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <title>Premium Procedures — Filler · Botox · Thread Lift · Laser | KMEDITOUR</title>
-    <meta
-      name="description"
-      content="Tailored solutions designed for you — discover Korea's trusted medical aesthetic procedures. Filler, Botox, Thread Lifting, Laser, Skin Booster, Skin Care, Fat Dissolving."
-    />
+    <title>Thread Lift | K-MEDI TOUR</title>
+    <meta name="description" content="Achieve an immediate lift with precision-placed threads for a natural V-line effect — non-surgical aesthetic treatment. Thread lift detail guide." />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Premium Procedures | KMEDITOUR" />
-    <meta property="og:description" content="Tailored solutions designed for you — discover Korea's trusted medical aesthetic procedures." />
+    <meta property="og:title" content="Thread Lift | K-MEDI TOUR" />
+    <meta property="og:description" content="Achieve an immediate lift with precision-placed threads for a natural V-line effect — non-surgical aesthetic treatment." />
+    <meta property="og:image" content="assets/img/2-hugro/treatment-2.png" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="KMEDITOUR" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,6 +17,7 @@
     <link rel="stylesheet" href="css/font.css" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/components/topbar.css" />
     <link rel="stylesheet" href="css/components/button.css" />
     <link rel="stylesheet" href="css/components/accordion.css" />
     <link rel="stylesheet" href="css/components/modal.css" />
@@ -29,10 +28,21 @@
     <link rel="stylesheet" href="css/components/footer.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/components/subpage.css" />
-    <link rel="stylesheet" href="css/procedure.css" />
+    <link rel="stylesheet" href="css/procedure-detail.css" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- ============================== MOBILE TOP BAR ============================== -->
+    <div class="topbar">
+      <a href="procedure.html" class="topbar__back" aria-label="Go back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </a>
+      <span class="topbar__title">Thread Lift</span>
+      <span class="topbar__spacer" aria-hidden="true"></span>
+    </div>
 
     <!-- ============================== HEADER ============================== -->
     <header class="header">
@@ -194,7 +204,7 @@
           <div class="gnb-contact-block">
             <div class="gnb-contact-cta">
               <a href="reservation.html" class="gnb-cta-btn gnb-cta-btn--book">Book a Consultation</a>
-              <a href="mailto:contact@kmeditour.com" class="gnb-cta-btn gnb-cta-btn--mail"> contact@kmeditour.com </a>
+              <a href="mailto:contact@kmeditour.com" class="gnb-cta-btn gnb-cta-btn--mail">contact@kmeditour.com</a>
             </div>
           </div>
           <div class="gnb-lang-tabs">
@@ -205,7 +215,6 @@
             <button class="gnb-lang-tab" data-lang="VN"><img src="assets/flag/flag_vietnam.svg" alt="VN" class="gnb-lang-flag" /><span class="gnb-lang-code">VN</span></button>
           </div>
         </div>
-
         <div class="gnb-cols">
           <div class="gnb-col gnb-col--mobile-only">
             <h4 data-en="About">
@@ -249,15 +258,17 @@
                       </button>
                     </div>
                     <ul class="gnb-sub-list">
-                      <li><a href="procedure.html">All</a></li>
-                      <li><a href="procedure.html?t=0">Filler</a></li>
-                      <li><a href="procedure.html?t=1">Botox</a></li>
-                      <li><a href="procedure.html?t=2">Thread Lift</a></li>
-                      <li><a href="procedure.html?t=3">Laser</a></li>
-                      <li><a href="procedure.html?t=4">Skin Booster</a></li>
-                      <li><a href="procedure.html?t=5">Skin Care</a></li>
-                      <li><a href="procedure.html?t=6">Fat Dissolving</a></li>
-                    </ul>
+                    <li><a href="procedure.html">All</a></li>
+                    <li><a href="procedure-detail-filler.html">Filler</a></li>
+                    <li><a href="procedure-detail-botox.html">Botox</a></li>
+                    <li>
+                      <a href="procedure-detail-threadlifting.html" class="is-active">Thread Lift</a>
+                    </li>
+                    <li><a href="procedure-detail-laser.html">Laser</a></li>
+                    <li><a href="procedure-detail-skinbooster.html">Skin Booster</a></li>
+                    <li><a href="procedure-detail-skincare.html">Skin Care</a></li>
+                    <li><a href="procedure-detail-fatdissolving.html">Fat Dissolving</a></li>
+                  </ul>
                   </li>
                 </ul>
               </li>
@@ -346,7 +357,7 @@
       </div>
     </div>
 
-    <!-- Procedure Sheet (Mobile) -->
+    <!-- Procedure Sheet -->
     <div class="proc-sheet" id="procSheet" aria-hidden="true">
       <div class="proc-sheet__bar">
         <span class="proc-sheet__title">Procedures</span>
@@ -358,13 +369,13 @@
       </div>
       <ul class="proc-sheet__list">
         <li><a href="procedure.html">All</a></li>
-        <li><a href="procedure.html?t=0">Filler</a></li>
-        <li><a href="procedure.html?t=1">Botox</a></li>
-        <li><a href="procedure.html?t=2">Thread Lift</a></li>
-        <li><a href="procedure.html?t=3">Laser</a></li>
-        <li><a href="procedure.html?t=4">Skin Booster</a></li>
-        <li><a href="procedure.html?t=5">Skin Care</a></li>
-        <li><a href="procedure.html?t=6">Fat Dissolving</a></li>
+        <li><a href="procedure-detail-filler.html">Filler</a></li>
+        <li><a href="procedure-detail-botox.html">Botox</a></li>
+        <li><a href="procedure-detail-threadlifting.html">Thread Lift</a></li>
+        <li><a href="procedure-detail-laser.html">Laser</a></li>
+        <li><a href="procedure-detail-skinbooster.html">Skin Booster</a></li>
+        <li><a href="procedure-detail-skincare.html">Skin Care</a></li>
+        <li><a href="procedure-detail-fatdissolving.html">Fat Dissolving</a></li>
       </ul>
       <a href="reservation.html" class="proc-sheet__banner">
         <div class="proc-sheet__banner-inner">
@@ -378,313 +389,381 @@
         </svg>
       </a>
     </div>
+
     <main id="main-content">
       <!-- ══════════════════════════════════════════════════════
-     HERO
+     01. HERO — Full-width Image Overlay
 ══════════════════════════════════════════════════════ -->
-      <section class="page-hero page-hero--navy page-hero--bc" aria-label="Premium Procedures">
-        <div class="wrap">
-          <p class="eyebrow">Premium Medical Procedures</p>
-          <h1 class="page-hero__title" style="font-family: var(--font-display); font-weight: 400; letter-spacing: -0.02em">Premium Procedures</h1>
-          <p class="page-hero__sub">
-            Tailored solutions designed exclusively for you —<br />
-            experience Korea's trusted medical aesthetic care.
-          </p>
-          <nav class="bc-nav" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
-            <span class="bc-sep" aria-hidden="true">/</span>
-            <span>Beauty</span>
-            <span class="bc-sep" aria-hidden="true">/</span>
-            <span aria-current="page">Procedures</span>
-          </nav>
+      <section class="pd-hero" aria-label="Thread Lift treatment introduction">
+        <img class="pd-hero__img" src="assets/img/2-hugro/treatment-2.png" alt="Thread Lift treatment" />
+        <div class="pd-hero__overlay" aria-hidden="true"></div>
+        <div class="pd-hero__text">
+          <p class="pd-hero__eyebrow">Treatment Guide</p>
+          <h1 class="pd-hero__title" style="font-family: var(--font-display); font-weight: 400; letter-spacing: -0.02em">Thread Lift</h1>
+          <p class="pd-hero__sub">A non-surgical aesthetic treatment that achieves an immediate lift with precision-placed threads for a natural V-line effect</p>
         </div>
       </section>
 
       <!-- ══════════════════════════════════════════════════════
-     FILTER BAR
+     02. QUICK INFO BAR
 ══════════════════════════════════════════════════════ -->
-      <nav class="proc-filter" id="procFilter" aria-label="Procedure categories">
-        <div class="proc-filter__inner">
-          <button class="tab-line__btn is-active" data-idx="0">Filler</button>
-          <button class="tab-line__btn" data-idx="1">Botox</button>
-          <button class="tab-line__btn" data-idx="2">Thread Lift</button>
-          <button class="tab-line__btn" data-idx="3">Laser</button>
-          <button class="tab-line__btn" data-idx="4">Skin Booster</button>
-          <button class="tab-line__btn" data-idx="5">Skin Care</button>
-          <button class="tab-line__btn" data-idx="6">Fat Dissolving</button>
-        </div>
-      </nav>
-
       <!-- ══════════════════════════════════════════════════════
-     SLIDER
+     03. OVERVIEW
 ══════════════════════════════════════════════════════ -->
-      <section class="proc-slider-section" id="procSliderSection" aria-label="Procedure slider">
-        <!-- Slider Viewport -->
-        <div class="proc-slider-viewport">
-          <div class="proc-slider-track" id="procTrack">
-            <!-- ── 01 Filler ── -->
-            <div class="proc-slide" role="group" aria-label="Filler">
-              <a class="proc-slide__card" href="procedure-detail-filler.html">
-                <div class="proc-slide__img-wrap">
-                  <img class="proc-slide__img" src="assets/img/4-treatment/filler.png" alt="Filler treatment" />
-                </div>
-                <div class="proc-slide__content">
-                  <span class="proc-slide__num">01</span>
-                  <h2 class="proc-slide__title">Filler</h2>
-                  <p class="proc-slide__desc">Restore lost volume for a naturally refined facial contour</p>
-                  <div class="proc-slide__tags">
-                    <span class="proc-slide__tag">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                      </svg>
-                      15–30 min
-                    </span>
-                    <span class="proc-slide__tag">Nasolabial Folds</span>
-                    <span class="proc-slide__tag">Cheeks</span>
-                    <span class="proc-slide__tag">Lips</span>
-                    <span class="proc-slide__tag">Jawline</span>
-                    <span class="proc-slide__tag">Under-eye</span>
-                    <span class="proc-slide__tag">Forehead</span>
-                  </div>
-                  <span class="proc-slide__link">
-                    Learn More
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
+      <section class="section pd-overview" aria-label="Overview" data-reveal>
+        <div class="wrap">
+          <div class="pd-sec-head">
+            <p class="eyebrow">Overview</p>
+            <h2 class="pd-sec-title">Overview</h2>
+          </div>
+          <div class="pd-overview__body">
+            <p>
+              Thread lift uses dissolvable medical threads inserted beneath the skin to physically lift sagging tissue. The threads also stimulate collagen production over time, delivering an immediate lifting effect and a natural V-line contour without incisions.
+            </p>
+          </div>
+          <table class="pd-info__table pd-info__table--inline">
+            <tbody>
+              <tr class="pd-info__row">
+                <th class="pd-info__th" scope="row">
+                  <span class="pd-info__icon-inline" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
                     </svg>
                   </span>
-                </div>
-              </a>
-            </div>
-
-            <!-- ── 02 Botox ── -->
-            <div class="proc-slide" role="group" aria-label="Botox">
-              <div class="proc-slide__card">
-                <div class="proc-slide__img-wrap">
-                  <img class="proc-slide__img" src="assets/img/2-hugro/treatment-main.png" alt="Botox treatment" />
-                </div>
-                <div class="proc-slide__content">
-                  <span class="proc-slide__num">02</span>
-                  <h2 class="proc-slide__title">Botox</h2>
-                  <p class="proc-slide__desc">Gently relax overactive muscles to soften expression lines and refine facial contours</p>
-                  <div class="proc-slide__tags">
-                    <span class="proc-slide__tag">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                      </svg>
-                      10–20 min
-                    </span>
-                    <span class="proc-slide__tag">Forehead</span>
-                    <span class="proc-slide__tag">Glabella</span>
-                    <span class="proc-slide__tag">Crow's Feet</span>
-                    <span class="proc-slide__tag">Jaw Slimming</span>
-                    <span class="proc-slide__tag">Neck</span>
-                    <span class="proc-slide__tag">Calf</span>
-                    <span class="proc-slide__tag">Trapezius</span>
-                  </div>
-                  <a href="procedure-detail-botox.html" class="proc-slide__link">
-                    Learn More
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
+                  Treatment Duration
+                </th>
+                <td class="pd-info__td">30–60 min</td>
+              </tr>
+              <tr class="pd-info__row">
+                <th class="pd-info__th" scope="row">
+                  <span class="pd-info__icon-inline" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
                     </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- ── 03 Thread Lift ── -->
-            <div class="proc-slide" role="group" aria-label="Thread Lift">
-              <div class="proc-slide__card">
-                <div class="proc-slide__img-wrap">
-                  <img class="proc-slide__img" src="assets/img/2-hugro/treatment-2.png" alt="Thread lift treatment" />
-                </div>
-                <div class="proc-slide__content">
-                  <span class="proc-slide__num">03</span>
-                  <h2 class="proc-slide__title">Thread Lift</h2>
-                  <p class="proc-slide__desc">Achieve an immediate lift with precision-placed threads for a natural V-line effect</p>
-                  <div class="proc-slide__tags">
-                    <span class="proc-slide__tag">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                      </svg>
-                      30–60 min
-                    </span>
-                    <span class="proc-slide__tag">Cheeks</span>
-                    <span class="proc-slide__tag">Jawline</span>
-                    <span class="proc-slide__tag">Neck</span>
-                    <span class="proc-slide__tag">Eyelids</span>
-                    <span class="proc-slide__tag">Forehead</span>
-                  </div>
-                  <a href="procedure-detail-threadlifting.html" class="proc-slide__link">
-                    Learn More
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
+                  </span>
+                  Recovery
+                </th>
+                <td class="pd-info__td">3–7 days <span class="pd-info__note">(varies by individual)</span></td>
+              </tr>
+              <tr class="pd-info__row">
+                <th class="pd-info__th" scope="row">
+                  <span class="pd-info__icon-inline" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                      <polyline points="23 4 23 10 17 10" />
+                      <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
                     </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- ── 04 Laser ── -->
-            <div class="proc-slide" role="group" aria-label="Laser">
-              <div class="proc-slide__card">
-                <div class="proc-slide__img-wrap">
-                  <img class="proc-slide__img" src="assets/img/2-hugro/treatment-3.png" alt="Laser treatment" />
-                </div>
-                <div class="proc-slide__content">
-                  <span class="proc-slide__num">04</span>
-                  <h2 class="proc-slide__title">Laser</h2>
-                  <p class="proc-slide__desc">Target pigmentation, stimulate renewal, and minimise pores with precision laser technology</p>
-                  <div class="proc-slide__tags">
-                    <span class="proc-slide__tag">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                      </svg>
-                      20–40 min
-                    </span>
-                    <span class="proc-slide__tag">Pigmentation</span>
-                    <span class="proc-slide__tag">Dark Spots</span>
-                    <span class="proc-slide__tag">Redness</span>
-                    <span class="proc-slide__tag">Pores</span>
-                    <span class="proc-slide__tag">Skin Texture</span>
-                  </div>
-                  <a href="procedure-detail-laser.html" class="proc-slide__link">
-                    Learn More
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
+                  </span>
+                  Longevity
+                </th>
+                <td class="pd-info__td">6–12 months <span class="pd-info__note">(varies by thread type)</span></td>
+              </tr>
+              <tr class="pd-info__row">
+                <th class="pd-info__th" scope="row">
+                  <span class="pd-info__icon-inline" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
                     </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- ── 05 Skin Booster ── -->
-            <div class="proc-slide" role="group" aria-label="Skin Booster">
-              <div class="proc-slide__card">
-                <div class="proc-slide__img-wrap">
-                  <img class="proc-slide__img" src="assets/img/2-hugro/treatment-4.png" alt="Skin booster treatment" />
-                </div>
-                <div class="proc-slide__content">
-                  <span class="proc-slide__num">05</span>
-                  <h2 class="proc-slide__title">Skin Booster</h2>
-                  <p class="proc-slide__desc">Deliver deep hydration and nourishment for a luminous, supple complexion</p>
-                  <div class="proc-slide__tags">
-                    <span class="proc-slide__tag">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                      </svg>
-                      20–30 min
-                    </span>
-                    <span class="proc-slide__tag">Full Face</span>
-                    <span class="proc-slide__tag">Neck</span>
-                    <span class="proc-slide__tag">Hands</span>
-                  </div>
-                  <a href="procedure-detail-skinbooster.html" class="proc-slide__link">
-                    Learn More
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- ── 06 Skin Care ── -->
-            <div class="proc-slide" role="group" aria-label="Skin Care">
-              <div class="proc-slide__card">
-                <div class="proc-slide__img-wrap">
-                  <img class="proc-slide__img" src="assets/img/2-hugro/treatment-1.png" alt="Skin care treatment" />
-                </div>
-                <div class="proc-slide__content">
-                  <span class="proc-slide__num">06</span>
-                  <h2 class="proc-slide__title">Skin Care</h2>
-                  <p class="proc-slide__desc">Bespoke treatments designed around your skin condition to refine tone and texture</p>
-                  <div class="proc-slide__tags">
-                    <span class="proc-slide__tag">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                      </svg>
-                      40–60 min
-                    </span>
-                    <span class="proc-slide__tag">Full Face</span>
-                    <span class="proc-slide__tag">Back</span>
-                    <span class="proc-slide__tag">Décolleté</span>
-                  </div>
-                  <a href="procedure-detail-skincare.html" class="proc-slide__link">
-                    Learn More
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- ── 07 Fat Dissolving ── -->
-            <div class="proc-slide" role="group" aria-label="Fat Dissolving">
-              <div class="proc-slide__card">
-                <div class="proc-slide__img-wrap">
-                  <img class="proc-slide__img" src="assets/img/2-hugro/treatment-5.png" alt="Fat dissolving treatment" />
-                </div>
-                <div class="proc-slide__content">
-                  <span class="proc-slide__num">07</span>
-                  <h2 class="proc-slide__title">Fat Dissolving</h2>
-                  <p class="proc-slide__desc">Selectively target stubborn fat cells to sculpt a naturally defined silhouette</p>
-                  <div class="proc-slide__tags">
-                    <span class="proc-slide__tag">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                      </svg>
-                      20–40 min
-                    </span>
-                    <span class="proc-slide__tag">Double Chin</span>
-                    <span class="proc-slide__tag">Cheeks</span>
-                    <span class="proc-slide__tag">Arms</span>
-                    <span class="proc-slide__tag">Abdomen</span>
-                    <span class="proc-slide__tag">Thighs</span>
-                  </div>
-                  <a href="procedure-detail-fatdissolving.html" class="proc-slide__link">
-                    Learn More
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /proc-slider-track -->
-
-          <!-- Dot Indicator -->
-          <div class="proc-dots" id="procDots" role="tablist" aria-label="Navigate slides">
-            <button class="proc-dot is-active" data-idx="0" aria-label="Filler"></button>
-            <button class="proc-dot" data-idx="1" aria-label="Botox"></button>
-            <button class="proc-dot" data-idx="2" aria-label="Thread Lift"></button>
-            <button class="proc-dot" data-idx="3" aria-label="Laser"></button>
-            <button class="proc-dot" data-idx="4" aria-label="Skin Booster"></button>
-            <button class="proc-dot" data-idx="5" aria-label="Skin Care"></button>
-            <button class="proc-dot" data-idx="6" aria-label="Fat Dissolving"></button>
-          </div>
+                  </span>
+                  Treatment Areas
+                </th>
+                <td class="pd-info__td">Cheeks, jawline, neck, eyelids, forehead</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <!-- /proc-slider-viewport -->
       </section>
-      <!-- /proc-slider-section -->
 
       <!-- ══════════════════════════════════════════════════════
-     CTA BANNER
+     04. TREATMENT AREAS
+══════════════════════════════════════════════════════ -->
+      <section class="section pd-areas" aria-label="Treatment Areas" data-reveal>
+        <div class="wrap">
+          <div class="pd-sec-head">
+            <p class="eyebrow">Treatment Areas</p>
+            <h2 class="pd-sec-title">Treatment Areas</h2>
+            <p class="pd-areas__current-name" id="areaCurrentName">Cheeks</p>
+          </div>
+
+          <!-- Tabs -->
+          <div class="pd-areas__tabs" role="tablist" aria-label="Select treatment area">
+            <button class="chip is-active" data-area="0" role="tab" aria-selected="true" aria-controls="area-panel-0">Cheeks</button>
+            <button class="chip" data-area="1" role="tab" aria-selected="false" aria-controls="area-panel-1">Jawline</button>
+            <button class="chip" data-area="2" role="tab" aria-selected="false" aria-controls="area-panel-2">Neck</button>
+            <button class="chip" data-area="3" role="tab" aria-selected="false" aria-controls="area-panel-3">Eyelids</button>
+            <button class="chip" data-area="4" role="tab" aria-selected="false" aria-controls="area-panel-4">Forehead</button>
+          </div>
+
+          <!-- Cheeks -->
+          <div class="pd-area-panel is-active" data-area="0" id="area-panel-0" role="tabpanel">
+            <div class="pd-area-panel__video-wrap">
+              <img class="pd-area-panel__video" src="assets/img/2-hugro/treatment-2.png" alt="Cheeks" />
+            </div>
+            <p class="pd-area-panel__caption">Cheeks area, tailored to Thread Lift treatment.</p>
+          </div>
+
+          <!-- Jawline -->
+          <div class="pd-area-panel" data-area="1" id="area-panel-1" role="tabpanel">
+            <div class="pd-area-panel__video-wrap">
+              <img class="pd-area-panel__video" src="assets/img/2-hugro/treatment-2.png" alt="Jawline" />
+            </div>
+            <p class="pd-area-panel__caption">Jawline area, tailored to Thread Lift treatment.</p>
+          </div>
+
+          <!-- Neck -->
+          <div class="pd-area-panel" data-area="2" id="area-panel-2" role="tabpanel">
+            <div class="pd-area-panel__video-wrap">
+              <img class="pd-area-panel__video" src="assets/img/2-hugro/treatment-2.png" alt="Neck" />
+            </div>
+            <p class="pd-area-panel__caption">Neck area, tailored to Thread Lift treatment.</p>
+          </div>
+
+          <!-- Eyelids -->
+          <div class="pd-area-panel" data-area="3" id="area-panel-3" role="tabpanel">
+            <div class="pd-area-panel__video-wrap">
+              <img class="pd-area-panel__video" src="assets/img/2-hugro/treatment-2.png" alt="Eyelids" />
+            </div>
+            <p class="pd-area-panel__caption">Eyelids area, tailored to Thread Lift treatment.</p>
+          </div>
+
+          <!-- Forehead -->
+          <div class="pd-area-panel" data-area="4" id="area-panel-4" role="tabpanel">
+            <div class="pd-area-panel__video-wrap">
+              <img class="pd-area-panel__video" src="assets/img/2-hugro/treatment-2.png" alt="Forehead" />
+            </div>
+            <p class="pd-area-panel__caption">Forehead area, tailored to Thread Lift treatment.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+     05. TREATMENT PROCESS
+══════════════════════════════════════════════════════ -->
+      <section class="section pd-process" aria-label="Treatment Process" data-reveal>
+        <div class="wrap">
+          <div class="pd-sec-head">
+            <p class="eyebrow">Process</p>
+            <h2 class="pd-sec-title">Treatment Process</h2>
+          </div>
+
+          <div class="acc" role="list">
+            <!-- Step 01 -->
+            <div class="acc-item is-open" role="listitem">
+              <button class="acc-head pd-process__head" aria-expanded="true">
+                <span class="pd-step-num">01</span>
+                <span class="pd-step-name">Consultation &amp; Lift Design</span>
+                <span class="acc-icon"></span>
+              </button>
+              <div class="acc-body">
+                <div class="pd-process__content">
+                  Sagging areas and facial structure are analysed to plan thread direction and quantity.
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 02 -->
+            <div class="acc-item" role="listitem">
+              <button class="acc-head pd-process__head" aria-expanded="false">
+                <span class="pd-step-num">02</span>
+                <span class="pd-step-name">Cleansing &amp; Local Anaesthesia</span>
+                <span class="acc-icon"></span>
+              </button>
+              <div class="acc-body">
+                <div class="pd-process__content">
+                  Local anaesthesia is applied and given time to take effect.
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="acc-item" role="listitem">
+              <button class="acc-head pd-process__head" aria-expanded="false">
+                <span class="pd-step-num">03</span>
+                <span class="pd-step-name">Thread Insertion</span>
+                <span class="acc-icon"></span>
+              </button>
+              <div class="acc-body">
+                <div class="pd-process__content">
+                  Threads are inserted along the planned direction using a specialised cannula.
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="acc-item" role="listitem">
+              <button class="acc-head pd-process__head" aria-expanded="false">
+                <span class="pd-step-num">04</span>
+                <span class="pd-step-name">Tension Adjustment</span>
+                <span class="acc-icon"></span>
+              </button>
+              <div class="acc-body">
+                <div class="pd-process__content">
+                  Threads are gently pulled to adjust lift and confirm facial symmetry.
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 05 -->
+            <div class="acc-item" role="listitem">
+              <button class="acc-head pd-process__head" aria-expanded="false">
+                <span class="pd-step-num">05</span>
+                <span class="pd-step-name">Aftercare Guidance</span>
+                <span class="acc-icon"></span>
+              </button>
+              <div class="acc-body">
+                <div class="pd-process__content">
+                  Swelling care and recovery precautions are explained.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+     06. BENEFITS + PRECAUTIONS
+══════════════════════════════════════════════════════ -->
+      <section class="section pd-bp" aria-label="Benefits and precautions" data-reveal>
+        <div class="wrap">
+          <div class="pd-bp__grid">
+            <div class="pd-bp__col pd-bp__col--benefit">
+              <div class="pd-bp__col-head">
+                <span class="pd-bp__icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </span>
+                <h3 class="pd-bp__col-title">Benefits</h3>
+              </div>
+              <ul class="pd-bp__list">
+                <li>Immediate lifting effect without incisions</li>
+                <li>Increasing firmness over time as collagen builds</li>
+                <li>Effective for sagging skin and double chin</li>
+                <li>Uses threads that safely dissolve in the body</li>
+                <li>Relatively long-lasting results of 6–12 months</li>
+              </ul>
+            </div>
+
+            <div class="pd-bp__col pd-bp__col--caution">
+              <div class="pd-bp__col-head">
+                <span class="pd-bp__icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                    <line x1="12" y1="9" x2="12" y2="13" />
+                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                  </svg>
+                </span>
+                <h3 class="pd-bp__col-title">Before & After Care</h3>
+              </div>
+              <ul class="pd-bp__list">
+                <li>Avoid excessive facial expressions and massage for one week</li>
+                <li>Avoid hard foods, sauna, and strenuous exercise</li>
+                <li>Threads may be felt or cause tightness that eases over time</li>
+                <li>Consult in advance if you have a blood clotting disorder</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+     07. RELATED PROCEDURES
+══════════════════════════════════════════════════════ -->
+      <section class="section pd-related" aria-label="Explore other treatments" data-reveal>
+        <div class="wrap">
+          <div class="pd-sec-head">
+            <p class="eyebrow">More Procedures</p>
+            <h2 class="pd-sec-title">Explore Other Treatments</h2>
+          </div>
+
+          <div class="pd-related__grid">
+            <a href="procedure-detail-filler.html" class="pd-rel-card">
+              <div class="pd-rel-card__img-wrap">
+                <img class="pd-rel-card__img" src="assets/img/4-treatment/filler.png" alt="Filler treatment" />
+              </div>
+              <div class="pd-rel-card__footer">
+                <span class="pd-rel-card__name">Filler</span>
+                <svg class="pd-rel-card__arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+            </a>
+
+            <a href="procedure-detail-botox.html" class="pd-rel-card">
+              <div class="pd-rel-card__img-wrap">
+                <img class="pd-rel-card__img" src="assets/img/1-page-home/01_main_banner/hero-13.png" alt="Botox treatment" />
+              </div>
+              <div class="pd-rel-card__footer">
+                <span class="pd-rel-card__name">Botox</span>
+                <svg class="pd-rel-card__arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+            </a>
+
+            <a href="procedure-detail-laser.html" class="pd-rel-card">
+              <div class="pd-rel-card__img-wrap">
+                <img class="pd-rel-card__img" src="assets/img/1-page-home/01_main_banner/hero-15.png" alt="Laser treatment" />
+              </div>
+              <div class="pd-rel-card__footer">
+                <span class="pd-rel-card__name">Laser</span>
+                <svg class="pd-rel-card__arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+            </a>
+
+            <a href="procedure-detail-skinbooster.html" class="pd-rel-card">
+              <div class="pd-rel-card__img-wrap">
+                <img class="pd-rel-card__img" src="assets/img/1-page-home/01_main_banner/hero-17.png" alt="Skin Booster treatment" />
+              </div>
+              <div class="pd-rel-card__footer">
+                <span class="pd-rel-card__name">Skin Booster</span>
+                <svg class="pd-rel-card__arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+            </a>
+
+            <a href="procedure-detail-skincare.html" class="pd-rel-card">
+              <div class="pd-rel-card__img-wrap">
+                <img class="pd-rel-card__img" src="assets/img/1-page-home/01_main_banner/hero-2.png" alt="Skin Care treatment" />
+              </div>
+              <div class="pd-rel-card__footer">
+                <span class="pd-rel-card__name">Skin Care</span>
+                <svg class="pd-rel-card__arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+            </a>
+
+            <a href="procedure-detail-fatdissolving.html" class="pd-rel-card">
+              <div class="pd-rel-card__img-wrap">
+                <img class="pd-rel-card__img" src="assets/img/1-page-home/01_main_banner/hero-5.png" alt="Fat Dissolving treatment" />
+              </div>
+              <div class="pd-rel-card__footer">
+                <span class="pd-rel-card__name">Fat Dissolving</span>
+                <svg class="pd-rel-card__arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+     08. CTA BANNER
 ══════════════════════════════════════════════════════ -->
       <div class="cta-banner" id="consultation" data-reveal>
         <div>
@@ -783,6 +862,9 @@
 
     <!-- Mobile Bottom Bar -->
 
+    <!-- Mobile CTA -->
+    <a href="reservation.html" class="pd-mobile-cta">Book a Consultation</a>
+
     <!-- Language Bottom Sheet -->
     <div class="lang-sheet" id="langSheet" aria-hidden="true">
       <div class="lang-sheet__backdrop"></div>
@@ -815,24 +897,22 @@
           <div class="login-modal__label-group">
             <label class="login-field-label" for="loginEmail">Email</label>
             <div class="login-modal__field">
-              <span class="login-field-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="17" height="17">
+              <span class="login-field-icon"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="17" height="17">
                   <rect x="2" y="4" width="20" height="16" rx="2" />
-                  <polyline points="2,4 12,13 22,4" />
-                </svg>
-              </span>
+                  <polyline points="2,4 12,13 22,4" /></svg
+              ></span>
               <input id="loginEmail" type="email" class="login-modal__input" placeholder="email@example.com" autocomplete="email" />
             </div>
           </div>
           <div class="login-modal__label-group">
             <label class="login-field-label" for="loginPassword">Password</label>
             <div class="login-modal__field">
-              <span class="login-field-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="17" height="17">
+              <span class="login-field-icon"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="17" height="17">
                   <rect x="3" y="11" width="18" height="11" rx="2" />
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                </svg>
-              </span>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg
+              ></span>
               <input type="password" id="loginPassword" class="login-modal__input" placeholder="••••••••" autocomplete="current-password" />
               <button type="button" class="login-pwd-eye" id="loginPwdToggle" aria-label="Show password">
                 <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="17" height="17">
@@ -843,10 +923,7 @@
             </div>
           </div>
           <div class="login-modal__options">
-            <label class="login-remember">
-              <input type="checkbox" />
-              Keep me signed in
-            </label>
+            <label class="login-remember"><input type="checkbox" />Keep me signed in</label>
             <a href="#" class="login-modal__forgot">Forgot your password?</a>
           </div>
           <button type="submit" class="login-modal__submit">Sign In</button>
@@ -854,7 +931,7 @@
         <div class="login-modal__divider"><span>or</span></div>
         <div class="login-modal__social">
           <button class="login-social-btn login-social-btn--google">
-            <svg viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 24 24" width="20" height="20">
               <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
               <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
               <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05" />
@@ -885,7 +962,8 @@
     <script src="js/image-slot.js"></script>
     <script src="js/app.js"></script>
     <script src="js/contact-popup.js"></script>
-    <script src="js/procedure.js"></script>
+    <script src="js/procedure-detail.js"></script>
+
     <script src="js/mobile-bar-en.js"></script>
     <script src="js/lang-nav.js"></script>
   </body>

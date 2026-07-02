@@ -9,6 +9,22 @@
   var areaPanels = document.querySelectorAll(".pd-area-panel");
   var areaCurrentName = document.getElementById("areaCurrentName");
 
+  function playPanelVideo(panel) {
+    if (!panel) return;
+    var video = panel.querySelector(".pd-area-panel__video");
+    if (video) {
+      video.currentTime = 0;
+      var playPromise = video.play();
+      if (playPromise && playPromise.catch) playPromise.catch(function () {});
+    }
+  }
+
+  areaPanels.forEach(function (p) {
+    var video = p.querySelector(".pd-area-panel__video");
+    if (video) video.pause();
+  });
+  playPanelVideo(document.querySelector(".pd-area-panel.is-active"));
+
   areaTabs.forEach(function (tab) {
     tab.addEventListener("click", function () {
       var idx = tab.dataset.area;
@@ -17,11 +33,14 @@
       });
       areaPanels.forEach(function (p) {
         p.classList.remove("is-active");
+        var video = p.querySelector(".pd-area-panel__video");
+        if (video) video.pause();
       });
       tab.classList.add("is-active");
       var panel = document.querySelector('.pd-area-panel[data-area="' + idx + '"]');
       if (panel) panel.classList.add("is-active");
       if (areaCurrentName) areaCurrentName.textContent = tab.textContent.trim();
+      playPanelVideo(panel);
     });
   });
 })();

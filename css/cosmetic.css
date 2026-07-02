@@ -1,4 +1,7 @@
 /* header: header--light (common.css) */
+:root {
+  --cosm-price: #0e8a72;
+}
 /* ── Shop Section ── */
 .cosm-shop {
   padding: var(--space-52) 0 var(--space-80);
@@ -150,46 +153,127 @@
   justify-content: center;
 }
 
-/* ── Pagination (모바일 전용 — 데스크탑에서는 숨김) ── */
-.cosm-pagination {
-  display: none;
+/* ── Search ── */
+.cosm-search {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0;
-  margin-top: var(--space-56);
+  justify-content: flex-end;
 }
-.cosm-pagi-btn {
-  width: 120px;
-  height: var(--space-48);
+.cosm-search__btn {
+  width: var(--space-36);
+  height: var(--space-36);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--border-gray-2);
-  background: var(--bg-white);
+  border: none;
+  background: none;
   color: var(--text-gray-5);
   cursor: pointer;
+  border-radius: 50%;
   transition:
     background 0.15s,
     color 0.15s;
-  border-radius: 0;
+  flex-shrink: 0;
 }
 @media (hover: hover) {
-  .cosm-pagi-btn:hover:not(:disabled) {
+  .cosm-search__btn:hover {
     background: var(--surface-gray-1);
     color: var(--text-gray-7);
   }
 }
-.cosm-pagi-btn:disabled {
+.cosm-search__input {
+  width: 0;
+  opacity: 0;
+  padding: var(--space-6) 0;
+  border: none;
+  border-bottom: 1.5px solid var(--border-gray-1);
+  background: none;
+  font-size: var(--text-14);
+  color: var(--text-gray-6);
+  transition:
+    width 0.2s ease,
+    opacity 0.2s ease,
+    margin 0.2s ease;
+}
+.cosm-search.is-open .cosm-search__input {
+  width: 160px;
+  opacity: 1;
+  margin-right: var(--space-8);
+}
+.cosm-search__input:focus {
+  outline: none;
+  border-bottom-color: var(--accent-blue);
+}
+
+/* ── Product Price (teal accent) ── */
+.cosm-grid .prod-card__price {
+  color: var(--cosm-price);
+}
+
+/* ── Pagination ── */
+.cosm-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  margin-top: var(--space-56);
+}
+.cosm-pagi-arrow {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  color: var(--text-gray-4);
+  cursor: pointer;
+  border-radius: 50%;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+@media (hover: hover) {
+  .cosm-pagi-arrow:hover:not(:disabled) {
+    background: var(--surface-gray-1);
+    color: var(--text-gray-7);
+  }
+}
+.cosm-pagi-arrow:disabled {
   opacity: 0.3;
   cursor: default;
 }
-.cosm-pagi-label {
-  min-width: 100px;
-  text-align: center;
-  font-size: var(--text-17);
-  font-weight: 400;
-  color: var(--text-gray-5);
-  letter-spacing: var(--tracking-snug);
+.cosm-pagi-nums {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.cosm-pagi-num {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  border-radius: 50%;
+  font-size: var(--text-15);
+  font-weight: 600;
+  color: var(--text-gray-4);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+@media (hover: hover) {
+  .cosm-pagi-num:hover:not(.is-active) {
+    background: var(--surface-gray-1);
+    color: var(--text-gray-7);
+  }
+}
+.cosm-pagi-num.is-active {
+  background: var(--text-gray-7);
+  color: var(--bg-white);
 }
 .cosm-grid:empty::after {
   content: "상품이 없습니다.";
@@ -300,9 +384,6 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: var(--space-16);
     row-gap: var(--space-40);
-  }
-  .cosm-pagination {
-    display: flex;
   }
   .cosm-controls {
     flex-wrap: wrap;
