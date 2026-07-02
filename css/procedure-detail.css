@@ -83,6 +83,45 @@
 }
 
 /* ─────────────────────────────────────────────────────
+   01-1. TREATMENT SWITCHER — Prev / Next Navigation
+   ───────────────────────────────────────────────────── */
+.pd-switcher {
+  display: flex;
+  border-top: 1px solid var(--border-gray-1);
+  border-bottom: 1px solid var(--border-gray-1);
+}
+
+.pd-switcher__item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px var(--gutter);
+  font-size: var(--text-14);
+  font-weight: 600;
+  color: var(--text-gray-6);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.pd-switcher__item:hover {
+  background-color: var(--gray-100);
+}
+
+.pd-switcher__item--prev {
+  justify-content: flex-start;
+  border-right: 1px solid var(--border-gray-1);
+}
+
+.pd-switcher__item--next {
+  justify-content: flex-end;
+}
+
+.pd-switcher__arrow {
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────────────
    02. QUICK INFO TABLE (개요 섹션 내 인라인 배치)
    ───────────────────────────────────────────────────── */
 .pd-info__table {
