@@ -46,9 +46,7 @@
     if (!track) return;
     var carousel = track.closest(".sa-carousel");
     var slides = track.querySelectorAll(".sa-carousel__slide");
-    var dots = document.getElementById(dotsId)
-      ? document.getElementById(dotsId).querySelectorAll(".sa-carousel__dot")
-      : [];
+    var dots = document.getElementById(dotsId) ? document.getElementById(dotsId).querySelectorAll(".sa-carousel__dot") : [];
     var counter = carousel.querySelector(".sa-carousel__counter");
     var prev = carousel.querySelector(".sa-carousel__arrow--prev");
     var next = carousel.querySelector(".sa-carousel__arrow--next");
@@ -174,8 +172,7 @@
   var eyeIcon = document.getElementById("eyeIcon");
   var eyeOffSvg =
     '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>';
-  var eyeOnSvg =
-    '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+  var eyeOnSvg = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
   if (pwdToggle)
     pwdToggle.addEventListener("click", function () {
       var isHidden = pwdInput.type === "password";

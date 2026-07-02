@@ -546,11 +546,11 @@
     gap: 10px;
   }
   .tv-searchbtn::after {
-    content: 'Search';
+    content: "Search";
     font-size: var(--text-14);
     color: var(--text-gray-2);
   }
-  .tv-searchbtn[aria-expanded='true'] {
+  .tv-searchbtn[aria-expanded="true"] {
     display: none;
   }
   .tv-search {

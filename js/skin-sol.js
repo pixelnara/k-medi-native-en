@@ -166,12 +166,7 @@
   }
 
   function buildKrText(m, p, e, s) {
-    return [
-      MOISTURE_TEXT[m],
-      SENSITIVE_TEXT[s],
-      PIGMENT_TEXT[p],
-      ELASTIC_TEXT[e],
-    ].join(" · ");
+    return [MOISTURE_TEXT[m], SENSITIVE_TEXT[s], PIGMENT_TEXT[p], ELASTIC_TEXT[e]].join(" · ");
   }
 
   function buildComment(m, p, e, s) {
@@ -179,25 +174,15 @@
     if (m === "O") intro += "피지 분비가 많아 번들거림이 나타나기 쉽고, ";
     else intro += "피부 수분이 부족하여 당김과 각질이 생기기 쉽고, ";
 
-    if (s === "S")
-      intro +=
-        "외부 자극에 민감하게 반응하며 붉어짐이 나타날 수 있는 피부 타입입니다.";
+    if (s === "S") intro += "외부 자극에 민감하게 반응하며 붉어짐이 나타날 수 있는 피부 타입입니다.";
     else intro += "외부 자극에 대한 내성이 강한 건강한 피부 타입입니다.";
 
     let detail = "";
-    if (p === "P")
-      detail +=
-        " 멜라닌 생성이 활발하여 기미·잡티 등 색소 침착이 발생하기 쉬우므로 브라이트닝 케어가 필요합니다.";
-    else
-      detail +=
-        " 피부톤이 비교적 균일하고 색소 침착이 적어 밝고 화사한 피부 상태를 유지하기에 유리합니다.";
+    if (p === "P") detail += " 멜라닌 생성이 활발하여 기미·잡티 등 색소 침착이 발생하기 쉬우므로 브라이트닝 케어가 필요합니다.";
+    else detail += " 피부톤이 비교적 균일하고 색소 침착이 적어 밝고 화사한 피부 상태를 유지하기에 유리합니다.";
 
-    if (e === "W")
-      detail +=
-        " 피부 탄력이 저하되어 주름이 생기기 쉬우므로 콜라겐 생성을 촉진하는 리프팅 케어를 추천합니다.";
-    else
-      detail +=
-        " 피부 탄력이 좋고 주름이 적은 건강한 상태로, 예방적 항노화 케어로 건강한 피부를 유지하세요.";
+    if (e === "W") detail += " 피부 탄력이 저하되어 주름이 생기기 쉬우므로 콜라겐 생성을 촉진하는 리프팅 케어를 추천합니다.";
+    else detail += " 피부 탄력이 좋고 주름이 적은 건강한 상태로, 예방적 항노화 케어로 건강한 피부를 유지하세요.";
 
     return intro + detail;
   }
@@ -615,15 +600,7 @@
     ];
     return map
       .map(function (b) {
-        return (
-          '<span class="pss-badge pss-badge--' +
-          b.letter +
-          '">' +
-          b.letter +
-          " " +
-          b.label +
-          "</span>"
-        );
+        return '<span class="pss-badge pss-badge--' + b.letter + '">' + b.letter + " " + b.label + "</span>";
       })
       .join("");
   }
@@ -638,12 +615,7 @@
     /* Populate result */
     document.getElementById("resultCode").textContent = buildCode(m, p, e, s);
     document.getElementById("resultKr").textContent = buildKrText(m, p, e, s);
-    document.getElementById("resultBadges").innerHTML = renderBadges(
-      m,
-      p,
-      e,
-      s,
-    );
+    document.getElementById("resultBadges").innerHTML = renderBadges(m, p, e, s);
     document.getElementById("aiComment").textContent = buildComment(m, p, e, s);
 
     const tags = buildFocusTags(m, p, e, s);
@@ -653,12 +625,8 @@
       })
       .join("");
 
-    document.getElementById("ingredientGrid").innerHTML = renderIngredients(
-      getIngredients(m, p, e, s),
-    );
-    document.getElementById("recStrip").innerHTML = renderRecCards(
-      getProducts(m, s),
-    );
+    document.getElementById("ingredientGrid").innerHTML = renderIngredients(getIngredients(m, p, e, s));
+    document.getElementById("recStrip").innerHTML = renderRecCards(getProducts(m, s));
 
     /* Show result section */
     const result = document.getElementById("pssResult");
@@ -701,8 +669,7 @@
         hairSection.setAttribute("aria-hidden", "false");
         if (breadcrumbCurrent) breadcrumbCurrent.textContent = "헤어 솔루션";
         heroTitle.textContent = "나의 헤어 케어 솔루션";
-        heroDesc.innerHTML =
-          "두피 고민별 맞춤 성분과 추천 제품을 확인하세요.<br>전문 성분 데이터를 기반으로 최적의 헤어 케어를 제안합니다.";
+        heroDesc.innerHTML = "두피 고민별 맞춤 성분과 추천 제품을 확인하세요.<br>전문 성분 데이터를 기반으로 최적의 헤어 케어를 제안합니다.";
       } else {
         quizSection.style.display = "";
         resultSection.style.display = "";
@@ -711,17 +678,14 @@
         hairSection.setAttribute("aria-hidden", "true");
         if (breadcrumbCurrent) breadcrumbCurrent.textContent = "스킨 솔루션";
         heroTitle.textContent = "나의 피부 솔루션 찾기";
-        heroDesc.innerHTML =
-          "4가지 항목에서 본인의 피부에 해당하는 특성을 선택하세요.<br>AI가 맞춤 피부 타입과 케어 솔루션을 분석해 드립니다.";
+        heroDesc.innerHTML = "4가지 항목에서 본인의 피부에 해당하는 특성을 선택하세요.<br>AI가 맞춤 피부 타입과 케어 솔루션을 분석해 드립니다.";
       }
     });
   });
 
   /* ── Hair Slider ── */
   var hairTrack = document.getElementById("pssHairTrack");
-  var hairSlides = hairTrack
-    ? hairTrack.querySelectorAll(".pss-hair-slide")
-    : [];
+  var hairSlides = hairTrack ? hairTrack.querySelectorAll(".pss-hair-slide") : [];
   var hairTabBtns = document.querySelectorAll(".pss-hair-tab");
   var hairCount = document.getElementById("pssHairCount");
   var hairPrev = document.getElementById("pssHairPrev");
@@ -731,8 +695,7 @@
   function goHairSlide(idx) {
     if (idx < 0 || idx >= hairSlides.length) return;
     currentHairSlide = idx;
-    if (hairTrack)
-      hairTrack.style.transform = "translateX(-" + idx * 100 + "%)";
+    if (hairTrack) hairTrack.style.transform = "translateX(-" + idx * 100 + "%)";
     hairTabBtns.forEach(function (t, i) {
       t.classList.toggle("is-active", i === idx);
       t.setAttribute("aria-selected", i === idx ? "true" : "false");
@@ -857,9 +820,7 @@
     result.setAttribute("aria-hidden", "true");
 
     /* Scroll to quiz */
-    document
-      .querySelector(".pss-quiz")
-      .scrollIntoView({ behavior: "smooth", block: "start" });
+    document.querySelector(".pss-quiz").scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   /* ── 저장된 퀴즈 결과 복원 (product.html 뒤로가기 시에만) ── */
@@ -903,30 +864,10 @@
     }
 
     /* 결과 렌더링 */
-    document.getElementById("resultCode").textContent = buildCode(
-      rm,
-      rp,
-      re,
-      rs,
-    );
-    document.getElementById("resultKr").textContent = buildKrText(
-      rm,
-      rp,
-      re,
-      rs,
-    );
-    document.getElementById("resultBadges").innerHTML = renderBadges(
-      rm,
-      rp,
-      re,
-      rs,
-    );
-    document.getElementById("aiComment").textContent = buildComment(
-      rm,
-      rp,
-      re,
-      rs,
-    );
+    document.getElementById("resultCode").textContent = buildCode(rm, rp, re, rs);
+    document.getElementById("resultKr").textContent = buildKrText(rm, rp, re, rs);
+    document.getElementById("resultBadges").innerHTML = renderBadges(rm, rp, re, rs);
+    document.getElementById("aiComment").textContent = buildComment(rm, rp, re, rs);
 
     var focusTags = buildFocusTags(rm, rp, re, rs);
     document.getElementById("aiTags").innerHTML = focusTags
@@ -935,12 +876,8 @@
       })
       .join("");
 
-    document.getElementById("ingredientGrid").innerHTML = renderIngredients(
-      getIngredients(rm, rp, re, rs),
-    );
-    document.getElementById("recStrip").innerHTML = renderRecCards(
-      getProducts(rm, rs),
-    );
+    document.getElementById("ingredientGrid").innerHTML = renderIngredients(getIngredients(rm, rp, re, rs));
+    document.getElementById("recStrip").innerHTML = renderRecCards(getProducts(rm, rs));
 
     /* 결과 섹션 표시 */
     var resultEl = document.getElementById("pssResult");
@@ -958,9 +895,7 @@
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-    var first = modal.querySelector(
-      "input:not([type=hidden]),button:not([disabled])",
-    );
+    var first = modal.querySelector("input:not([type=hidden]),button:not([disabled])");
     if (first)
       setTimeout(function () {
         first.focus();
@@ -993,8 +928,7 @@
   const eyeIcon = document.getElementById("eyeIcon");
   const eyeOffSvg =
     '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>';
-  const eyeOnSvg =
-    '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+  const eyeOnSvg = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
   if (pwdToggle)
     pwdToggle.addEventListener("click", function () {
       const isHidden = pwdInput.type === "password";

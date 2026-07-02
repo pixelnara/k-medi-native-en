@@ -26,8 +26,7 @@ window.pssState = (function () {
         var raw = sessionStorage.getItem(KEY);
         if (!raw) return null;
         var data = JSON.parse(raw);
-        if (data.moisture && data.pigment && data.elastic && data.sensitive)
-          return data;
+        if (data.moisture && data.pigment && data.elastic && data.sensitive) return data;
         return null;
       } catch (e) {
         return null;

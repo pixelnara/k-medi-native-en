@@ -2,24 +2,21 @@
 
 (function () {
   /* ── 언어 감지 (html[lang]) ── */
-  var LANG =
-    (document.documentElement.lang || "en").toLowerCase().indexOf("ko") === 0
-      ? "ko"
-      : "en";
+  var LANG = (document.documentElement.lang || "en").toLowerCase().indexOf("ko") === 0 ? "ko" : "en";
 
   /* ── 상세 데이터: 이미지(언어 공통) ── */
   var DETAIL_IMG = {
-    'hotel-1': ['assets/img/6-page-tour/1-stay/1-lotte.png','assets/img/6-page-tour/1-stay/2-plaza.png','assets/img/6-page-tour/1-stay/3-marriott.png'],
-    'hotel-2': ['assets/img/6-page-tour/1-stay/2-plaza.png','assets/img/6-page-tour/1-stay/3-marriott.png','assets/img/6-page-tour/1-stay/1-lotte.png'],
-    'hotel-3': ['assets/img/6-page-tour/1-stay/3-marriott.png','assets/img/6-page-tour/1-stay/1-lotte.png','assets/img/6-page-tour/1-stay/2-plaza.png'],
-    'shop-1':  ['assets/img/6-page-tour/2-tax/1-lotte.png','assets/img/6-page-tour/2-tax/2-shilla.png','assets/img/6-page-tour/2-tax/3-shinsegae.png'],
-    'shop-2':  ['assets/img/6-page-tour/2-tax/3-shinsegae.png','assets/img/6-page-tour/2-tax/1-lotte.png','assets/img/6-page-tour/2-tax/2-shilla.png'],
-    'shop-3':  ['assets/img/6-page-tour/4-market/1-namdaemun.png','assets/img/6-page-tour/4-market/2-dongdaemun.png','assets/img/6-page-tour/4-market/3-gwangjang.png'],
-    'shop-4':  ['assets/img/6-page-tour/4-market/2-dongdaemun.png','assets/img/6-page-tour/4-market/3-gwangjang.png','assets/img/6-page-tour/4-market/1-namdaemun.png'],
-    'shop-5':  ['assets/img/6-page-tour/3-shop/1-seongsu.png','assets/img/6-page-tour/3-shop/2-garosugil.png'],
-    'shop-6':  ['assets/img/6-page-tour/3-shop/2-garosugil.png','assets/img/6-page-tour/3-shop/1-seongsu.png'],
-    'shop-7':  ['assets/img/6-page-tour/4-market/3-gwangjang.png','assets/img/6-page-tour/4-market/1-namdaemun.png','assets/img/6-page-tour/4-market/2-dongdaemun.png'],
-    'shop-8':  ['assets/img/6-page-tour/2-tax/2-shilla.png','assets/img/6-page-tour/2-tax/1-lotte.png','assets/img/6-page-tour/2-tax/3-shinsegae.png']
+    "hotel-1": ["assets/img/6-page-tour/1-stay/1-lotte.png", "assets/img/6-page-tour/1-stay/2-plaza.png", "assets/img/6-page-tour/1-stay/3-marriott.png"],
+    "hotel-2": ["assets/img/6-page-tour/1-stay/2-plaza.png", "assets/img/6-page-tour/1-stay/3-marriott.png", "assets/img/6-page-tour/1-stay/1-lotte.png"],
+    "hotel-3": ["assets/img/6-page-tour/1-stay/3-marriott.png", "assets/img/6-page-tour/1-stay/1-lotte.png", "assets/img/6-page-tour/1-stay/2-plaza.png"],
+    "shop-1": ["assets/img/6-page-tour/2-tax/1-lotte.png", "assets/img/6-page-tour/2-tax/2-shilla.png", "assets/img/6-page-tour/2-tax/3-shinsegae.png"],
+    "shop-2": ["assets/img/6-page-tour/2-tax/3-shinsegae.png", "assets/img/6-page-tour/2-tax/1-lotte.png", "assets/img/6-page-tour/2-tax/2-shilla.png"],
+    "shop-3": ["assets/img/6-page-tour/4-market/1-namdaemun.png", "assets/img/6-page-tour/4-market/2-dongdaemun.png", "assets/img/6-page-tour/4-market/3-gwangjang.png"],
+    "shop-4": ["assets/img/6-page-tour/4-market/2-dongdaemun.png", "assets/img/6-page-tour/4-market/3-gwangjang.png", "assets/img/6-page-tour/4-market/1-namdaemun.png"],
+    "shop-5": ["assets/img/6-page-tour/3-shop/1-seongsu.png", "assets/img/6-page-tour/3-shop/2-garosugil.png"],
+    "shop-6": ["assets/img/6-page-tour/3-shop/2-garosugil.png", "assets/img/6-page-tour/3-shop/1-seongsu.png"],
+    "shop-7": ["assets/img/6-page-tour/4-market/3-gwangjang.png", "assets/img/6-page-tour/4-market/1-namdaemun.png", "assets/img/6-page-tour/4-market/2-dongdaemun.png"],
+    "shop-8": ["assets/img/6-page-tour/2-tax/2-shilla.png", "assets/img/6-page-tour/2-tax/1-lotte.png", "assets/img/6-page-tour/2-tax/3-shinsegae.png"],
   };
 
   /* ── 상세 데이터: 언어별 텍스트 (cat/title/addr/desc/promo/cats) ── */
@@ -47,8 +44,7 @@
         cat: "면세점",
         title: "롯데면세점 명동점",
         addr: "롯데면세점 본점, 서울 중구 을지로 30",
-        promo:
-          "면세점 이용 시 할인 쿠폰을 제공해 드립니다. (일부 브랜드는 프로모션에서 제외될 수 있습니다)",
+        promo: "면세점 이용 시 할인 쿠폰을 제공해 드립니다. (일부 브랜드는 프로모션에서 제외될 수 있습니다)",
         desc: "명동 중심에 위치한 국내 최대 규모의 면세점으로 명품부터 K-뷰티까지 한자리에서 쇼핑할 수 있습니다.",
         cats: ["메이크업", "럭셔리", "주류", "패션"],
       },
@@ -92,8 +88,7 @@
         cat: "면세점",
         title: "신라면세점 서울점",
         addr: "신라면세점 서울점, 서울 중구 동호로 249",
-        promo:
-          "면세점 이용 시 멤버십 적립 및 할인 혜택을 제공해 드립니다. (일부 브랜드 제외)",
+        promo: "면세점 이용 시 멤버십 적립 및 할인 혜택을 제공해 드립니다. (일부 브랜드 제외)",
         desc: "장충동에 위치한 프리미엄 면세점으로 럭셔리 브랜드 부티크와 K-뷰티 라인업이 다양합니다.",
         cats: ["럭셔리", "메이크업", "패션", "주류"],
       },
@@ -121,8 +116,7 @@
         cat: "Duty Free",
         title: "Lotte Duty Free Myeongdong",
         addr: "Lotte Duty Free Main, 30 Eulji-ro, Jung-gu, Seoul",
-        promo:
-          "Enjoy exclusive discount coupons with your duty-free purchase. (Some brands may be excluded from the promotion.)",
+        promo: "Enjoy exclusive discount coupons with your duty-free purchase. (Some brands may be excluded from the promotion.)",
         desc: "Korea's largest duty-free store in the heart of Myeongdong, where you can shop everything from luxury labels to K-beauty under one roof.",
         cats: ["Makeup", "Luxury", "Liquor", "Fashion"],
       },
@@ -166,8 +160,7 @@
         cat: "Duty Free",
         title: "Shilla Duty Free Seoul",
         addr: "Shilla Duty Free Seoul, 249 Dongho-ro, Jung-gu, Seoul",
-        promo:
-          "Enjoy membership rewards and discount benefits with your duty-free purchase. (Some brands excluded.)",
+        promo: "Enjoy membership rewards and discount benefits with your duty-free purchase. (Some brands excluded.)",
         desc: "A premium duty-free destination in Jangchung-dong with an extensive lineup of luxury brand boutiques and K-beauty.",
         cats: ["Luxury", "Makeup", "Fashion", "Liquor"],
       },
@@ -177,8 +170,7 @@
   /* ── 합성: 이미지 + 현재 언어 텍스트 ── */
   var DETAIL_DATA = {};
   Object.keys(DETAIL_IMG).forEach(function (k) {
-    var t =
-      (DETAIL_TEXT[LANG] && DETAIL_TEXT[LANG][k]) || DETAIL_TEXT.ko[k] || {};
+    var t = (DETAIL_TEXT[LANG] && DETAIL_TEXT[LANG][k]) || DETAIL_TEXT.ko[k] || {};
     var rec = { imgs: DETAIL_IMG[k] };
     Object.keys(t).forEach(function (p) {
       rec[p] = t[p];
@@ -242,40 +234,39 @@
   });
 
   /* ── 검색 아이콘 토글 ── */
-  document.querySelectorAll('[data-search-toggle]').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
+  document.querySelectorAll("[data-search-toggle]").forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
       e.stopPropagation();
       var box = document.querySelector('[data-search-box="' + btn.dataset.searchToggle + '"]');
       if (!box) return;
-      if (box.hasAttribute('hidden')) {
-        box.removeAttribute('hidden');
-        btn.setAttribute('aria-expanded', 'true');
-        var inp = box.querySelector('.tv-search__input');
+      if (box.hasAttribute("hidden")) {
+        box.removeAttribute("hidden");
+        btn.setAttribute("aria-expanded", "true");
+        var inp = box.querySelector(".tv-search__input");
         if (inp) inp.focus();
       } else {
-        box.setAttribute('hidden', '');
-        btn.setAttribute('aria-expanded', 'false');
+        box.setAttribute("hidden", "");
+        btn.setAttribute("aria-expanded", "false");
       }
     });
   });
 
   /* ── 컬럼(그리드) 토글 (단일 버튼 순환) ── */
   var COL_ICONS = {
-    '1': '<rect x="6.5" y="6.5" width="11" height="11" rx="2" />',
-    '2': '<rect x="3.5" y="3.5" width="7" height="7" rx="1.3" /><rect x="13.5" y="3.5" width="7" height="7" rx="1.3" /><rect x="3.5" y="13.5" width="7" height="7" rx="1.3" /><rect x="13.5" y="13.5" width="7" height="7" rx="1.3" />'
+    1: '<rect x="6.5" y="6.5" width="11" height="11" rx="2" />',
+    2: '<rect x="3.5" y="3.5" width="7" height="7" rx="1.3" /><rect x="13.5" y="3.5" width="7" height="7" rx="1.3" /><rect x="3.5" y="13.5" width="7" height="7" rx="1.3" /><rect x="13.5" y="13.5" width="7" height="7" rx="1.3" />',
   };
-  document.querySelectorAll('.tv-col-toggle').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-
+  document.querySelectorAll(".tv-col-toggle").forEach(function (btn) {
+    btn.addEventListener("click", function () {
       var key = btn.dataset.cols;
-      var next = btn.dataset.val === '1' ? '2' : '1';
+      var next = btn.dataset.val === "1" ? "2" : "1";
       btn.dataset.val = next;
-      var ico = btn.querySelector('.tv-col-ico');
+      var ico = btn.querySelector(".tv-col-ico");
       if (ico) ico.innerHTML = COL_ICONS[next];
-      var grid = document.getElementById('grid-' + key);
+      var grid = document.getElementById("grid-" + key);
       if (grid) {
-        grid.classList.remove('tv-grid--c1', 'tv-grid--c2');
-        grid.classList.add('tv-grid--c' + next);
+        grid.classList.remove("tv-grid--c1", "tv-grid--c2");
+        grid.classList.add("tv-grid--c" + next);
       }
     });
   });
@@ -301,8 +292,7 @@
       menu.querySelectorAll(".tv-sort__item").forEach(function (i) {
         i.classList.toggle("is-active", i.dataset.value === val);
       });
-      document.querySelector('[data-sort-label="' + key + '"]').textContent =
-        val === "recommended" ? T.sortRec : T.sortName;
+      document.querySelector('[data-sort-label="' + key + '"]').textContent = val === "recommended" ? T.sortRec : T.sortName;
       menu.classList.remove("is-open");
       filterAndSort(key);
     });
@@ -330,19 +320,12 @@
   function filterAndSort(key) {
     var grid = document.getElementById("grid-" + key);
     var cards = Array.from(grid.querySelectorAll(".tv-card"));
-    var query = (
-      document.querySelector('[data-search="' + key + '"]').value || ""
-    )
-      .trim()
-      .toLowerCase();
+    var query = (document.querySelector('[data-search="' + key + '"]').value || "").trim().toLowerCase();
 
     cards.forEach(function (card) {
       var name = card.dataset.name.toLowerCase();
       var matchSearch = !query || name.includes(query);
-      var matchCat =
-        key !== "shopping" ||
-        activeFilter === "all" ||
-        card.dataset.cat === activeFilter;
+      var matchCat = key !== "shopping" || activeFilter === "all" || card.dataset.cat === activeFilter;
       card.style.display = matchSearch && matchCat ? "" : "none";
     });
 
@@ -366,9 +349,7 @@
     /* count */
     var countEl = document.getElementById("count-" + key);
     if (countEl) {
-      countEl.innerHTML = (key === "hotel" ? T.countHotel : T.countShop)(
-        visible.length,
-      );
+      countEl.innerHTML = (key === "hotel" ? T.countHotel : T.countShop)(visible.length);
     }
 
     /* empty */
@@ -418,15 +399,7 @@
         d.cats
           .map(function (c, i) {
             var img = d.imgs[i] || d.imgs[0];
-            return (
-              '<div class="tv-detail__cat-item"><img class="tv-detail__cat-img" src="' +
-              img +
-              '" alt="' +
-              c +
-              '" /><span class="tv-detail__cat-label">' +
-              c +
-              "</span></div>"
-            );
+            return '<div class="tv-detail__cat-item"><img class="tv-detail__cat-img" src="' + img + '" alt="' + c + '" /><span class="tv-detail__cat-label">' + c + "</span></div>";
           })
           .join("") +
         "</div>";
@@ -443,13 +416,7 @@
       .join("");
     detDots.innerHTML = imgs
       .map(function (_, i) {
-        return (
-          '<button class="tv-detail__cdot' +
-          (i === 0 ? " is-active" : "") +
-          '" data-i="' +
-          i +
-          '"></button>'
-        );
+        return '<button class="tv-detail__cdot' + (i === 0 ? " is-active" : "") + '" data-i="' + i + '"></button>';
       })
       .join("");
     detDots.querySelectorAll(".tv-detail__cdot").forEach(function (dot) {

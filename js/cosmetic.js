@@ -129,14 +129,7 @@
 
   var currentCategory = "all";
   var currentSort = "default";
-  var TAG_COLORS = [
-    "cosm-tag--0",
-    "cosm-tag--1",
-    "cosm-tag--2",
-    "cosm-tag--3",
-    "cosm-tag--4",
-    "cosm-tag--5",
-  ];
+  var TAG_COLORS = ["cosm-tag--0", "cosm-tag--1", "cosm-tag--2", "cosm-tag--3", "cosm-tag--4", "cosm-tag--5"];
 
   function formatPrice(n) {
     return "₩" + n.toLocaleString("ko-KR");
@@ -144,17 +137,9 @@
 
   function renderCard(p) {
     return [
-      '<article class="prod-card" data-id="' +
-        p.id +
-        '" data-imgs="' +
-        p.imgs.join("|") +
-        '">',
+      '<article class="prod-card" data-id="' + p.id + '" data-imgs="' + p.imgs.join("|") + '">',
       '  <div class="prod-card__img-wrap">',
-      '    <img class="prod-card__img" src="' +
-        p.img +
-        '" alt="' +
-        p.name +
-        '" loading="lazy" />',
+      '    <img class="prod-card__img" src="' + p.img + '" alt="' + p.name + '" loading="lazy" />',
       "",
       '    <div class="prod-card__hover-bar">',
       '      <button class="cosm-hbtn" aria-label="장바구니"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>',
@@ -167,12 +152,8 @@
       '  <div class="prod-card__body">',
       '    <h3 class="prod-card__name">' + p.name + "</h3>",
       '    <div class="prod-card__meta">',
-      '      <span class="prod-card__price">' +
-        formatPrice(p.price) +
-        "</span>",
-      '      <span class="prod-card__rating">★ ' +
-        p.rating.toFixed(1) +
-        "</span>",
+      '      <span class="prod-card__price">' + formatPrice(p.price) + "</span>",
+      '      <span class="prod-card__rating">★ ' + p.rating.toFixed(1) + "</span>",
       "    </div>",
       "  </div>",
       "</article>",
@@ -216,9 +197,7 @@
     }
 
     document.getElementById("productCount").textContent = filtered.length;
-    document.getElementById("productGrid").innerHTML = filtered
-      .map(renderCard)
-      .join("");
+    document.getElementById("productGrid").innerHTML = filtered.map(renderCard).join("");
 
     document.querySelectorAll(".prod-card[data-id]").forEach(function (card) {
       card.addEventListener("click", function () {
@@ -228,17 +207,12 @@
         });
         if (product) {
           sessionStorage.setItem("cosm_product", JSON.stringify(product));
-          sessionStorage.setItem(
-            "cosm_products",
-            JSON.stringify(products),
-          ); /* ★ [신규] product.html 좌측 추천 상품 패널용 전체 상품 목록 전달 */
+          sessionStorage.setItem("cosm_products", JSON.stringify(products)); /* ★ [신규] product.html 좌측 추천 상품 패널용 전체 상품 목록 전달 */
           window.location.href = "product.html";
         }
       });
 
-      var imgs = (card.getAttribute("data-imgs") || "")
-        .split("|")
-        .filter(Boolean);
+      var imgs = (card.getAttribute("data-imgs") || "").split("|").filter(Boolean);
       var imgEl = card.querySelector(".prod-card__img");
       var imgIdx = 0;
       var errCount = 0;
@@ -356,9 +330,7 @@
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-    var first = modal.querySelector(
-      "input:not([type=hidden]),button:not([disabled])",
-    );
+    var first = modal.querySelector("input:not([type=hidden]),button:not([disabled])");
     if (first)
       setTimeout(function () {
         first.focus();
@@ -391,8 +363,7 @@
   const eyeIcon = document.getElementById("eyeIcon");
   const eyeOffSvg =
     '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>';
-  const eyeOnSvg =
-    '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+  const eyeOnSvg = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
   if (pwdToggle)
     pwdToggle.addEventListener("click", function () {
       const isHidden = pwdInput.type === "password";

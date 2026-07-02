@@ -15,8 +15,7 @@
       tab.setAttribute("aria-selected", "true");
       const f = tab.dataset.filter;
       cards.forEach((card) => {
-        card.style.display =
-          f === "all" || card.dataset.category === f ? "" : "none";
+        card.style.display = f === "all" || card.dataset.category === f ? "" : "none";
       });
     });
   });

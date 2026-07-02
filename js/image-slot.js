@@ -164,10 +164,7 @@
   async function toDataUrl(file, targetW) {
     const bitmap = await createImageBitmap(file);
     try {
-      const cap = Math.min(
-        MAX_DIM,
-        Math.max(1, Math.round(targetW * 2)) || MAX_DIM,
-      );
+      const cap = Math.min(MAX_DIM, Math.max(1, Math.round(targetW * 2)) || MAX_DIM);
       const scale = Math.min(1, cap / Math.max(bitmap.width, bitmap.height));
       const w = Math.max(1, Math.round(bitmap.width * scale));
       const h = Math.max(1, Math.round(bitmap.height * scale));
@@ -248,16 +245,7 @@
 
   class ImageSlot extends HTMLElement {
     static get observedAttributes() {
-      return [
-        "shape",
-        "radius",
-        "mask",
-        "fit",
-        "position",
-        "placeholder",
-        "src",
-        "id",
-      ];
+      return ["shape", "radius", "mask", "fit", "position", "placeholder", "src", "id"];
     }
 
     constructor() {
@@ -305,10 +293,7 @@
       // disconnect/reconnect (e.g. React remount) doesn't stack handlers.
       this._empty.addEventListener("click", () => this._input.click());
       root.addEventListener("click", (e) => {
-        const act =
-          e.target &&
-          e.target.getAttribute &&
-          e.target.getAttribute("data-act");
+        const act = e.target && e.target.getAttribute && e.target.getAttribute("data-act");
         if (act === "replace") {
           this._exitReframe(true);
           this._input.click();
@@ -371,9 +356,7 @@
           const ux = (sx * w0) / diag0,
             uy = (sy * h0) / diag0;
           move = (ev) => {
-            const proj =
-              (ev.clientX - rect.left - ox) * ux +
-              (ev.clientY - rect.top - oy) * uy;
+            const proj = (ev.clientX - rect.left - ox) * ux + (ev.clientY - rect.top - oy) * uy;
             const s = clampS((s0 * proj) / diag0);
             const d = (diag0 * s) / s0;
             this._view.s = s;
@@ -443,9 +426,7 @@
       // cannot persist, and two id-less slots would share nothing.
       if (!this.id && !ImageSlot._warned) {
         ImageSlot._warned = true;
-        console.warn(
-          "<image-slot> without an id will not persist its dropped image.",
-        );
+        console.warn("<image-slot> without an id will not persist its dropped image.");
       }
       this.addEventListener("dragenter", this);
       this.addEventListener("dragover", this);
@@ -501,8 +482,7 @@
       if (this._dragUp) this._dragUp();
       this.removeAttribute("data-reframe");
       this.removeAttribute("data-panning");
-      if (this._outside)
-        document.removeEventListener("pointerdown", this._outside, true);
+      if (this._outside) document.removeEventListener("pointerdown", this._outside, true);
       if (this._esc) document.removeEventListener("keydown", this._esc, true);
       this._outside = this._esc = null;
       if (commit) this._commitView();
@@ -534,8 +514,7 @@
         e.stopPropagation();
         this._depth = 0;
         this.removeAttribute("data-over");
-        const f =
-          e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+        const f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
         if (f) this._ingest(f);
       }
     }
@@ -594,10 +573,7 @@
     // Reframing (pan/resize) is only meaningful for fit=cover — contain/fill
     // keep the old object-fit path and double-click is a no-op.
     _reframes() {
-      return (
-        this.hasAttribute("data-filled") &&
-        (this.getAttribute("fit") || "cover") === "cover"
-      );
+      return this.hasAttribute("data-filled") && (this.getAttribute("fit") || "cover") === "cover";
     }
 
     // Cover-baseline geometry, shared by clamp/apply/resize. Null until the
@@ -634,8 +610,7 @@
         this._img.style.left = "50%";
         this._img.style.top = "50%";
         this._img.style.objectFit = fit;
-        this._img.style.objectPosition =
-          this.getAttribute("position") || "50% 50%";
+        this._img.style.objectPosition = this.getAttribute("position") || "50% 50%";
         return;
       }
       // Cover baseline: img fills the frame on its tighter axis at s=1, so
@@ -711,8 +686,7 @@
           y: stored && Number.isFinite(stored.y) ? stored.y : 0,
         };
       }
-      this._cap.textContent =
-        this.getAttribute("placeholder") || "Drop an image";
+      this._cap.textContent = this.getAttribute("placeholder") || "Drop an image";
       // Toggle via style.display — the [hidden] attribute alone loses to
       // the display:flex / display:block rules in the stylesheet above.
       if (url) {

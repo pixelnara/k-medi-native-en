@@ -178,8 +178,7 @@
 
     const symptomEl = document.getElementById("summarySymptom");
     const symptomSrc = document.getElementById("rsvSymptom");
-    if (symptomEl && symptomSrc)
-      symptomEl.textContent = symptomSrc.value || "—";
+    if (symptomEl && symptomSrc) symptomEl.textContent = symptomSrc.value || "—";
 
     setEl("summaryName", getVal("rsvName"));
     setEl("summaryPhone", getVal("rsvPhone"));
